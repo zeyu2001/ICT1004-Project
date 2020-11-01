@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-sm fixed-top navbar-light bg-white">
+  <div class="container">
+    <a class="navbar-brand" href="index.php">
+        ManyHires
+    </a>
+    <button class="navbar-toggler" 
+        type="button" 
+        data-toggle="collapse" 
+        data-target="#navbar" 
+        aria-controls="navbar" 
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse order-1" id="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="about.php">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="listings.php" data-toggle="dropdown">
+                  Find Freelancers
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="listings.php">Front-End Developer</a>
+                  <a class="dropdown-item" href="listings.php">Back-End Developer</a>
+                  <a class="dropdown-item" href="listings.php">Full-Stack Developer</a>
+                </div>
+            </li>
+        </ul> 
+    </div>
+    <div class="collapse navbar-collapse order-2" id="navbar">
+        <ul class="navbar-nav ml-auto">
+            
+            <!--  If user is logged in, provide link to profile -->
+            <?php if (isset($_SESSION['display_name'])): ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.php"><?php echo $_SESSION["display_name"] ?></a>
+                </li>
+            <?php endif; ?>
+                
+            <li class="nav-item">
+                <a class="nav-link" href="register.php"><i class="material-icons">account_circle</i></a> 
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.php"><i class="material-icons">login</i></a> 
+            </li>
+        </ul>
+    </div>
+  </div>
+</nav>
