@@ -13,8 +13,10 @@
             include "nav.inc.php"; 
         ?>
         <header class="jumbotron text-center">
-            <h1 class="display-4">Welcome to ManyHires!</h1> 
-            <h2>Placeholder Text</h2>
+            <h1 class="display-4">Talent on Demand.</h1> 
+            <p class="lead">The future of recruiting is here.</p>
+            <a class="red-button" href="register.php">Create a free account</a>
+            <a class="red-button" href="abour.php">Find out more</a>
         </header>
         <main class="container"> 
             <h1>Welcome</h1>

@@ -1,4 +1,26 @@
-$(document).ready(function(){
+$(document).ready(function()
+{    
+    /*
+    * Navbar Active/Inactive Status
+    * 
+    * Highlights the menu item corresponding to the page currently being viewed.
+    */
+    function activateMenu()
+    {
+        var current_page_URL = location.href;
+        $(".navbar-nav a").each(function()
+        {
+            var target_URL = $(this).prop("href"); 
+            if (target_URL === current_page_URL)
+            {
+                $('nav a').parents('li, ul').removeClass('active'); 
+                $(this).parent('li').addClass('active');
+                return false;
+            }
+        });
+    }
+    
+    activateMenu();
     
     /* 
      * Navbar Dropdown Menu (On Hover)
@@ -12,22 +34,15 @@ $(document).ready(function(){
     $(".dropdown").hover(
             
         // mouseenter
-        function(){ 
+        function()
+        { 
             $(this).find('.dropdown-menu').first().stop(true, true).slideDown(); 
         },
         
         // mouseleave
-        function(){ 
+        function()
+        { 
             $(this).find('.dropdown-menu').first().stop(true, true).slideUp(); 
         }
     );
-    
-    /* 
-     * Navbar Dropdown Menu (On Click)
-     * 
-     * Allows the navbar element to serve as a link.
-     */
-    $(".dropdown-toggle").click(function(){
-        window.open($(this).attr('href'), "_blank")
-    });
 });

@@ -1,17 +1,102 @@
-body { padding-top: 70px; }
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+1. Material Icons
+2. Navbar
+3. Jumbotron
+4. Buttons
+5. Footer
 
-footer {
-    border-top: 5px solid gray;
-    padding-top: 20px;
-    font-style: italic;
-    text-align: center;
-    font-size: 0.9em;
+/* 1. Material Icons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Vertically Align Material Icons with Text */
+.material-icons {
+    vertical-align: middle;
 }
 
+/* 2. Navbar
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* 
+ * When using the fixed-top navbar, the navbar contents overlap with 
+ * the page body. Padding is required to prevent this overlap.
+ */
+body { padding-top: 100px; }
+
+/* Mobile Devices */
+@media screen and (max-width: 992px) {
+    body { padding-top: 70px; }
+}
+
+/* Center-align Brand */
+.navbar-brand
+{
+    font-size: 1.5em;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin:0 auto;
+}
+
+.nav-item {
+    text-align: center;
+}
+
+.nav-link {
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #031D44;
+    padding: 20px 0px;
+    margin: 0px 20px;
+    display: inline-block;
+    position: relative;
+    opacity: 0.75;
+}
+
+.nav-link:hover {
+    opacity: 1;
+}
+
+/* 
+ * Underline Nav Link 
+ * 
+ * When not hovered, width: 0% hides the underline.
+ * When hovered, width: 100% shows the underline.
+ */
+.nav-link::before {
+    transition: 300ms;
+    height: 5px;
+    content: "";
+    position: absolute;
+    background-color: #ff0000;
+    width: 0%;
+    bottom: 10px;
+}
+
+.nav-link:hover::before {
+    width: 100%;
+}
+
+/* 3. Jumbotron
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.jumbotron {
+    background: linear-gradient(160deg, white 50%, #ff0000 50%, #ff0000 70%, white 70%);
+    background-repeat: no-repeat;
+    color: black;
+    height: 100vh;
+}
+
+/* 4. Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* 
+ * For navigation purposes, anchors styled as buttons are used.
+ * For other purposes, e.g. submitting a form, buttons are used.
+ */
 a.red-button {
     appearance: button;
     text-decoration: none;
-    background-color: #ff6666;
+    background-color: #ff0000;
     border: none;
     color: white;
     text-align: center;
@@ -33,3 +118,14 @@ a.green-button {
     margin: 4px 2px;
     border-radius: 8px;
 }
+
+/* 5. Footer
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+footer {
+    border-top: 5px solid gray;
+    padding-top: 20px;
+    font-style: italic;
+    text-align: center;
+    font-size: 0.9em;
+}
+
