@@ -1,5 +1,7 @@
+<!-- THIS IS A TEST FILE, REMOVE DURING PRODUCTION -->
+
 <?php
-    // Connect To Database
+    // ONLY FOR DEVELOPMENT. MOVE TO A SECURE .INI FILE IN PRODUCTION
     $hostname='184.72.246.32:3306';
     $username='sqldev';
     $password='ICT1004BestGroup!';
