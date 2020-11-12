@@ -70,8 +70,78 @@
                     <div class="card-body">
                         <div class="icon-right">
                             <h1 class="card-title"><?php echo $_SESSION['display_name'] ?></h1>
-                            <i class="material-icons">edit</i>
+                            <i class="material-icons edit-icon" data-toggle="modal" data-target="#edit-profile">edit</i>
                         </div>
+                        
+                        <!-- Modal -->
+                        <div id="edit-profile" class="modal fade" role="dialog">
+                          <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="modal-title">Edit Profile</h2>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                
+                                <!-- Form to Update Profile Display Information -->
+                                <form action="#" method="post"> 
+                                    <div class="form-group">
+                                        <label for="fname">First Name:</label>
+                                        <input class="form-control" type="text" id="fname"
+                                            maxlength="45" name="fname" value="<?php echo $fname ?>"
+                                            pattern="^[a-zA-Z\s]*$">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="lname">Last Name:</label> 
+                                        <input class="form-control" type="text" id="lname" required
+                                            maxlength="45"  name="lname" value="<?php echo $lname ?>"
+                                            pattern="^[a-zA-Z\s]+$">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="email">Email:</label>
+                                        <input class="form-control" type="email" id="email" required
+                                             name="email" value="<?php echo $email ?>" 
+                                             pattern="^[a-z0-9][_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="headline">Headline:</label>
+                                        <input class="form-control" type="text" id="headline" required
+                                             name="headline" value="<?php echo $headline ?>"
+                                             pattern="^[a-zA-Z\s\.,!?]*$">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="location">Location:</label>
+                                        <input class="form-control" type="text" id="location" required
+                                             name="location" value="<?php echo $location ?>"
+                                             pattern="^[a-zA-Z\s\.,!?]*$">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="description">Description:</label>
+                                        <textarea class="form-control"><?php echo $description ?></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <button class="btn btn-primary" type="submit">Update</button> 
+                                    </div>
+                                </form>
+                                <!-- END Form -->
+                                
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                        
                         <h2 class="card-subtitle mb-2 text-muted"><?php echo $headline ?></h2>
                         <p class="text-secondary mb-2"> <?php echo $location ?> </p>
                         <p class="card-text"><?php echo $description ?></p>
@@ -81,35 +151,11 @@
             <div class="col-sm">
                 <div class="card">
                     <div class="card-body">
-                        <h2 class="card-title">My Information</h2>
-                        <!-- Form to Display / Edit Personal Information -->
-                        <form action="#" method="post"> 
-                            <div class="form-group">
-                                <label for="fname">First Name:</label>
-                                <input class="form-control" type="text" id="fname"
-                                    maxlength="45" name="fname" value=<?php echo $fname ?>
-                                    pattern="^[a-zA-Z\s]*$">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="lname">Last Name:</label> 
-                                <input class="form-control" type="text" id="lname" required
-                                    maxlength="45"  name="lname" value=<?php echo $lname ?>
-                                    pattern="^[a-zA-Z\s]+$">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">Email:</label>
-                                <input class="form-control" type="email" id="email" required
-                                     name="email" value=<?php echo $email ?>
-                                     pattern="^[a-z0-9][_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$">
-                            </div>
-                            
-                            <div class="form-group">
-                                <button class="btn btn-primary" type="submit">Update</button> 
-                            </div>
-                        </form>
-                        <!-- END Form -->
+                        <h2 class="card-title">My Skills</h2>
+                        <div class="slidecontainer">
+                            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                            <p>Value: <span id="demo"></span></p>
+                        </div>
                     </div>
                 </div>
             </div>
