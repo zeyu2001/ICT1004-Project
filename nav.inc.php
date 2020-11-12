@@ -2,12 +2,12 @@
     <div class="container">
         
         <!-- Center-aligned Brand --> 
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand mx-auto" href="index.php">
             ManyHires
         </a>
-        
+
         <!-- Right-aligned Mobile Hamburger Menu -->
-        <button class="navbar-toggler ml-auto" 
+        <button class="navbar-toggler" id="navbar-toggler"
             type="button" 
             data-toggle="collapse" 
             data-target="#navbar" 
@@ -15,17 +15,17 @@
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
-        <div class="collapse navbar-collapse" id="navbar">
-
+            
+        <div class="navbar-collapse collapse" id="navbar">
+            
             <!-- Left-aligned Nav Links --> 
-            <ul class="navbar-nav" mr-auto>
+            <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="about.php">About Us</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="listings.php" data-toggle="dropdown">
-                      Find Freelancers
+                        Find Freelancers
                     </a>
                     <div class="dropdown-menu">
                       <a class="dropdown-item" href="listings.php">Front-End Developer</a>

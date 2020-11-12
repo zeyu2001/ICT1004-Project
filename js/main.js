@@ -27,23 +27,42 @@ $(document).ready(function()
      * 
      * Adds sliding animations on hover.
      * 
-     * Note that data-toggle="dropdown" should not be changed,
-     * in order to preserve the click functionality for touchscreen
-     * devices and keyboard users.
+     * Note that touchstart event listener helps to preserve the 'tap'
+     * functionality on mobile devices, while allowing desktop devices
+     * to use the 'hover' functionality.
      */
+    
+    /* Helper Functions */
+    function closeDropdown() 
+    {
+        $(this).find('.dropdown-menu').first().stop(true, true).slideUp(); 
+    };
+    
+    function openDropdown()
+    { 
+        $(this).find('.dropdown-menu').first().stop(true, true).slideDown(); 
+    };
+    
+    /* Handle touch events on mobile devices */
+    $('.dropdown').on('touchstart',function(e) {
+        $(this).find('.dropdown-menu').slideToggle(500);
+        
+        // Prevent mouseenter and mouseleave events
+        $(this).off('mouseenter, mouseleave');
+        
+        // Dropdown closes when user clicks anywhere
+        document.addEventListener('touchstart', closeDropdown, false);
+        e.stopImmediatePropagation();
+    });
+    
+    /* Handle hover events on desktop devices */
     $(".dropdown").hover(
             
         // mouseenter
-        function()
-        { 
-            $(this).find('.dropdown-menu').first().stop(true, true).slideDown(); 
-        },
+        openDropdown,
         
         // mouseleave
-        function()
-        { 
-            $(this).find('.dropdown-menu').first().stop(true, true).slideUp(); 
-        }
+        closeDropdown
     );
     
     var slider = document.getElementById("myRange");

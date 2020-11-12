@@ -52,15 +52,27 @@ body { padding-top: 100px; }
     body { padding-top: 70px; }
 }
 
-/* Center-align Brand */
+/* Center Align Navbar Brand */
+@media (min-width: 992px) {
+.navbar-brand
+    {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        text-align: center;
+    }
+}
+
+.navbar-toggler {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Styling for Navbar Items */
 .navbar-brand
 {
     font-size: 1.5em;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    text-align: center;
-    margin:0 auto;
 }
 
 .nav-item {
