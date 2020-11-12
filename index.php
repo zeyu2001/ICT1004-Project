@@ -20,8 +20,13 @@
             <a class="red-button" href="register.php">Create a free account</a>
             <a class="red-button" href="about.php">Find out more</a>
         </header>
-        <main class="container"> 
-            <h1>Welcome</h1>
+        <main class="container">
+            <section id="welcome">
+                <h1>Welcome</h1>
+            </section>
+            <section id="about">
+                <h1>About</h1>
+            </section>
         </main>
         <?php
             echo str_repeat("<br>", 20); // placeholder for testing fixed navbar
