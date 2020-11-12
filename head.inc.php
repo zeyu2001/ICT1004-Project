@@ -14,7 +14,6 @@
     <!-- Google Icons (Material Design) -->
     <link rel="stylesheet" 
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          integrity="sha384-qxRmiCVRn7HtP9k0B5bcBJ51XbcZFJC9ItjAH542oORfcl+R+JBpR71x4px91nux" 
           crossorigin="anonymous">
 
     <!-- jQuery --> 
