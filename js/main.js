@@ -98,4 +98,10 @@ $(document).ready(function()
         output = document.getElementById($(this).attr("id").replace("value", "slider"));
         output.value = parseInt(this.value);
     });
+    
+    /*
+     * WORK IN PROGRESS
+     * change form inputs according to different account types
+     */
+    
 });
