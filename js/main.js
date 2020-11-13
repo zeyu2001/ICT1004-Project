@@ -65,13 +65,37 @@ $(document).ready(function()
         closeDropdown
     );
     
-    var slider = document.getElementById("myRange");
-    var output = document.getElementById("demo");
-    output.innerHTML = slider.value; // Display the default slider value
-
+    /* 
+     * Skill Sliders 
+     * 
+     * Adapted From: W3 Schools Range Slider Example
+     * https://www.w3schools.com/howto/howto_js_rangeslider.asp
+     */
+    
+    // Get all skill sliders
+    var sliders = document.getElementsByClassName("skill-slider");
+    
+    // Dislay original value
+    for (var i = 0; i < sliders.length; i++) {
+        slider = sliders[i];
+        output = document.getElementById($(slider).attr("id").replace("slider", "value"));
+        output.setAttribute("value", slider.value);
+    }
+    
+    // Add event listeners to update slider value
+    for (var i = 0; i < sliders.length; i++) {
+        sliders[i].addEventListener('input', updateSliderValue, false);
+    }
+    
     // Update the current slider value (each time you drag the slider handle)
-    slider.oninput = function() {
-      output.innerHTML = this.value;
+    function updateSliderValue() {
+        output = document.getElementById($(this).attr("id").replace("slider", "value"));
+        output.value = parseInt(this.value);
     };
     
+    $(".skill-value").on("input", function()
+    {
+        output = document.getElementById($(this).attr("id").replace("value", "slider"));
+        output.value = parseInt(this.value);
+    });
 });
