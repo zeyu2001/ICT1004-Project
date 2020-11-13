@@ -224,3 +224,9 @@ footer {
     background: red;
     cursor: pointer;
 }
+
+/* Search Bar in landing page */
+#searchBar {
+    display: block;
+    padding-top: 5%;
+}

@@ -19,8 +19,15 @@
             <p class="lead">The future of recruiting is here.</p>
             <a class="red-button" href="register.php">Create a free account</a>
             <a class="red-button" href="about.php">Find out more</a>
+            <form id="searchBar" action="#">
+                <div class="form-group">
+                    <input class="form-control border border-dark" type="search" placeholder="Search for talents" aria-label="Search">
+                </div>
+                <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </header>
         <main class="container">
+            
             <section id="welcome">
                 <h1>Welcome</h1>
             </section>
