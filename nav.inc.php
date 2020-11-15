@@ -3,7 +3,7 @@
         
         <!-- Center-aligned Brand --> 
         <a class="navbar-brand mx-auto" href="index.php">
-            ManyHires
+            <img alt="LOGO" class="navbar-logo" src="images/logo_word.png">
         </a>
 
         <!-- Right-aligned Mobile Hamburger Menu -->
@@ -43,13 +43,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="profile.php"><?php echo $_SESSION["display_name"] ?></a>
                     </li>
+                    
+                <!--  Else, provide link to login -->
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php"><i class="material-icons">login</i>Login</a> 
+                    </li>
                 <?php endif; ?>
 
                 <li class="nav-item">
                     <a class="nav-link" href="register.php"><i class="material-icons">account_circle</i>Register</a> 
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.php"><i class="material-icons">login</i>Login</a> 
                 </li>
             </ul>
         </div>
