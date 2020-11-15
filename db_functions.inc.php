@@ -30,7 +30,7 @@
      *                     2, if execution error
      *                     3, if parameters are invalid
      */
-    function query_db($query, $params)
+    function query_db($query, $params, $fetch=False)
     {
         global $config;
         $errorMsg = "";
@@ -86,7 +86,9 @@
         else
         {
             $result = $stmt->get_result();
-
+            if ($fetch) {
+                $result = $result->fetch_assoc();
+            }
             $stmt->close();
             $conn->close(); 
 
