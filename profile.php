@@ -43,6 +43,7 @@
                 if (!$return_code === 0)
                 {
                     echo $errorMsg;
+                    exit();
                 }
                 else if ($result->num_rows > 0)
                 {
@@ -268,6 +269,7 @@
                                 if (!$return_code === 0)
                                 {
                                     echo $errorMsg;
+                                    exit();
                                 }
                                 else if ($result->num_rows > 0)
                                 {
