@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    //session_start();
 ?>
 
 <!DOCTYPE html>
@@ -23,8 +23,9 @@
                 
             <!-- Form code here -->
             <?php else: ?>
-                Existing members log in here. For new members, please go to the 
-                <a href="register.php">Sign Up page</a>. 
+                <p>Existing members log in here. For new members, please go to the 
+                <a href="register.php">Sign Up page</a>. </p>
+                <?php include 'login_form.php'?>
             <?php endif; ?>
                 
         </main>

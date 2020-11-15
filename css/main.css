@@ -230,3 +230,8 @@ footer {
     display: block;
     padding-top: 5%;
 }
+
+.login_logo{
+    padding-top: 3%;
+    padding-right: 10%;
+}
