@@ -3,7 +3,7 @@
         
         <!-- Center-aligned Brand --> 
         <a class="navbar-brand mx-auto" href="index.php">
-            ManyHires
+            <img src="images/logo_word.png" alt="ManyHires" id="nav_logo"/>
         </a>
 
         <!-- Right-aligned Mobile Hamburger Menu -->
