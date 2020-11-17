@@ -28,7 +28,7 @@
                 <div class="form-group form-row">
                     <div class="col">
                         <label for="fname">First Name:</label>
-                        <input class="form-control" id="fname" type="text" placeholder="First name">
+                        <input class="form-control" id="fname" type="text" placeholder="First name" required>
                     </div>
                     <div class="col">
                         <label for="lname">Last Name:</label>
@@ -38,21 +38,21 @@
                 <div class="form-group form-row">
                     <div class="col">
                         <label for="email">Email:</label>
-                        <input class="form-control" id="email" type="email" placeholder="example@email.com">
+                        <input class="form-control" id="email" type="email" placeholder="example@email.com" required>
                     </div>
                     <div class="col">
                         <label for="email_Conf">Confirm Email:</label>
-                        <input class="form-control" id="email_Conf" type="email" placeholder="example@email.com">
+                        <input class="form-control" id="email_Conf" type="email" placeholder="example@email.com" required>
                     </div>
                 </div>
                 <div class="form-group form-row">
                     <div class="col">
                         <label for="password">Password:</label>
-                        <input class="form-control" id="password" type="password" placeholder="...">
+                        <input class="form-control" id="password" type="password" placeholder="..." required>
                     </div>
                     <div class="col">
                         <label for="password_conf">Confirm Password:</label>
-                        <input class="form-control" id="password_conf" type="password" placeholder="...">
+                        <input class="form-control" id="password_conf" type="password" placeholder="..." required>
                     </div>
                 </div>
                 <div class="form-group">

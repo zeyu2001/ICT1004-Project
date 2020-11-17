@@ -93,4 +93,12 @@
             return array(0, $result, null);
         }
     }
+    
+    /*
+     * data_array contains an array of user credentials to be put into the database
+     */
+    function register($data_array)
+    {
+        
+    }
 ?>
