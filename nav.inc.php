@@ -21,7 +21,7 @@
             <!-- Left-aligned Nav Links --> 
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="about.php">About Us</a>
+                    <a class="nav-link" href="#about">About Us</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="listings.php" data-toggle="dropdown">

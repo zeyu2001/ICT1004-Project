@@ -24,12 +24,13 @@
             </form>
         </header>
         <main class="container">
-            
             <section id="welcome">
                 <h1>Welcome</h1>
             </section>
             <section id="about">
-                <h1>About</h1>
+                <?php
+                    include "about.php";
+                ?>
             </section>
         </main>
         <?php
