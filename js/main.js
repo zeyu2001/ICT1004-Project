@@ -129,4 +129,11 @@ $(document).ready(function()
      * change form inputs according to different account types
      */
     
+//    function UpdateFormType()
+//    {
+//        var classes = "col"
+//        var obj = document.getElementById("account_type");
+//        obj.className += " hide" + obj.value;
+//    };
+//    document.getElementById("account_type").addEventListener("change", UpdateFormType);
 });

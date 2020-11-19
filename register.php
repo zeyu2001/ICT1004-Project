@@ -28,41 +28,41 @@
                 <div class="form-group form-row">
                     <div class="col">
                         <label for="fname">First Name:</label>
-                        <input class="form-control" id="fname" type="text" placeholder="e.g. James" required>
+                        <input class="form-control" id="fname" name="fname" type="text" placeholder="e.g. James">
                     </div>
                     <div class="col">
                         <label for="lname">Last Name:</label>
-                        <input class="form-control" id="lname" type="text" placeholder="e.g. Bond">
+                        <input class="form-control" id="lname" name="lname" type="text" placeholder="e.g. Bond" required>
                     </div>
                 </div>
                 <div class="form-group form-row">
                     <div class="col">
                         <label for="email">Email:</label>
-                        <input class="form-control" id="email" type="email" placeholder="e.g. jamesbond@gmail.com" required>
+                        <input class="form-control" id="email" name="email" type="email" placeholder="e.g. jamesbond@gmail.com" required>
                     </div>
                     <div class="col">
                         <label for="email_Conf">Confirm Email:</label>
-                        <input class="form-control" id="email_Conf" type="email" placeholder="e.g. jamesbond@gmail.com" required>
+                        <input class="form-control" id="email_conf" name="email_conf" type="email" placeholder="e.g. jamesbond@gmail.com" required>
                     </div>
                 </div>
                 <div class="form-group form-row">
                     <div class="col">
                         <label for="password">Password:</label>
-                        <input class="form-control" id="password" type="password" placeholder="••••••" required>
+                        <input class="form-control" id="password" name="password" type="password" placeholder="••••••" required>
                     </div>
                     <div class="col">
                         <label for="password_conf">Confirm Password:</label>
-                        <input class="form-control" id="password_conf" type="password" placeholder="••••••" required>
+                        <input class="form-control" id="password_conf" name="password_conf" type="password" placeholder="••••••" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="address">Address:</label>
-                    <input class="form-control" id="address" type="text" placeholder="e.g. 123 Baker Street">
+                    <input class="form-control" id="address" name="address" type="text" placeholder="e.g. 123 Baker Street">
                 </div>
                 <div class="form-group form-row">
                     <div class="col">
                         <label for="country">Country:</label>
-                        <select class="form-control form-control-md" name="country" id="country">
+                        <select class="form-control form-control-md" name="country" id="country" required>
                             <?php
                                 include 'countries.inc.php';
                             ?>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="col">
                         <label for="postalCode">Postal Code:</label>
-                        <input class="form-control" id="postalCode" type="text" placeholder="e.g. 123456">
+                        <input class="form-control" id="postalCode" name="postalcode" type="text" placeholder="e.g. 123456">
                     </div>
                 </div>
                 <div class="form-group">
