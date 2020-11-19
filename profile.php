@@ -88,7 +88,7 @@
                                 <div class="modal-body">
                                 
                                     <!-- Form to Update Profile Display Information -->
-                                    <form action="#" method="post"> 
+                                    <form action="process_profile.php" method="post" id="profile-form"> 
                                         <div class="form-group">
                                             <label for="fname">First Name:</label>
                                             <input class="form-control" type="text" id="fname"
@@ -126,7 +126,7 @@
 
                                         <div class="form-group">
                                             <label for="description">Description:</label>
-                                            <textarea class="form-control"><?php echo $description ?></textarea>
+                                            <textarea class="form-control" form="profile-form" name="description"><?php echo $description ?></textarea>
                                         </div>
 
                                         <div class="form-group">
@@ -171,7 +171,7 @@
                                         </div>
                                         <div class="modal-body">
                                             
-                                            <form action="#">
+                                            <form action="process_skills.php">
 
                                                 <div class="form-row align-items-center">
                                                     <div class="col-md-12 mb-3">
