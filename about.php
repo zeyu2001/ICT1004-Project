@@ -6,12 +6,10 @@
     experience with past roles in major companies including Google, Facebook and Microsoft.
     We are confident that they can meet your needs.
 </p>
-<br>
 <p>
     If you are a free-lancer looking for work opportunities, we can easily connect
     you with employment opportunities.
 </p>
-<br>
 <p>
     Our network has connected over 1200 coders and customers in just the last 3
     months. Join today and leverage the fast growing community of web developers online.
