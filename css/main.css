@@ -2,7 +2,7 @@
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 1. Material Icons
 2. Navbar
-3. Jumbotron
+3. Landing Page
 4. Buttons
 5. Footer
 6. Sliders
@@ -129,13 +129,54 @@ body { padding-top: 100px; }
     width: 100%;
 }
 
-/* 3. Jumbotron
+/* 3. Landing Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 #index-jumbotron {
     background: linear-gradient(160deg, white 50%, #ff0000 50%, #ff0000 70%, white 70%);
     background-repeat: no-repeat;
     color: black;
     height: 100vh;
+}
+
+/* 
+ * Parallax Scrolling Effect 
+ * 
+ * Adapted from: W3 Schools How-To Parallax Scrolling Example
+ * https://www.w3schools.com/howto/howto_css_parallax.asp
+ */
+
+body, html {
+    height: 100%;
+}
+
+.parallax-work {
+    
+    /* 
+     * Image Attribution / Citation 
+     * Text will appear at the bottom right
+     */
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    margin: 0px 0px 20px 0px;
+    
+    font-size: 0.8em;
+    
+    height: 300px;
+    background-image: url("../images/work.jpg");
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Turn off parallax scrolling for all tablets and phones. */
+@media only screen and (max-device-width: 1366px) {
+    .parallax {
+        background-attachment: scroll;
+    }
 }
 
 /* 4. Buttons
