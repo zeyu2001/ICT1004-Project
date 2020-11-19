@@ -1,6 +1,10 @@
 <head>
     <title>ManyHires</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"           
+      content="A talent matching service to connect professional freelancers to 
+      businesses, allowing clients to adapt to rapidly-changing needs.">
     
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" 
@@ -8,7 +12,11 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
         crossorigin="anonymous">
     
+    <!-- AOS Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/assessible.bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
 
     <!-- Google Icons (Material Design) -->
@@ -17,9 +25,9 @@
           crossorigin="anonymous">
 
     <!-- jQuery --> 
-    <script defer
-        src="https://code.jquery.com/jquery-3.4.1.min.js" 
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" 
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
         crossorigin="anonymous">
     </script>
 
@@ -29,6 +37,9 @@
         integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" 
         crossorigin="anonymous">
     </script>
+    
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
     <!-- Custom JS -->
     <script defer src="js/main.js"></script>

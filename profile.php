@@ -15,7 +15,7 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <?php
         include "head.inc.php";
         include "db_functions.inc.php"

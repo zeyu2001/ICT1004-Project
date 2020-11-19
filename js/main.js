@@ -1,5 +1,30 @@
 $(document).ready(function()
 {    
+    AOS.init();
+    
+    /* 
+     * "Back to Top" Button 
+     * 
+     * Displays the button when user scrolls to the bottom of the screen.
+     * Clicking on the button fires the scroll-to-top animation.
+     */
+    const $backTop = $(".back-to-top");
+    const isHidden = "is-hidden";
+
+    $(window).on("scroll", function() {
+      const $this = $(this);
+      if ($this.scrollTop() + $this.height() === $(document).height()) {
+        $backTop.removeClass(isHidden);
+      } else {
+        $backTop.addClass(isHidden);
+      }
+    });
+
+    $backTop.on("click", () => {
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      return false;
+    });
+    
     /*
     * Navbar Active/Inactive Status
     * 
