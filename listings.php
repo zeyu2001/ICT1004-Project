@@ -35,24 +35,24 @@
                         $freelancers_row = $freelancers_result->fetch_assoc();
                         ?>
                         <div class="col-sm-12">
-                            <div class="row jumbotron listing">
-                                <div class="col-sm-2">"
+                            <div class="row listing">
+                                <div class="col-sm-2">
                                     <img class="rounded listing-image" 
                                          src="<?php echo "ProfilePicturesPFP". $listings_row['freelancer_id']. ".jpg" ?>"
                                          alt="Failed to load profile picture">
                                 </div>
                                 <div class="col-sm-10">
-                                    <div class="row listingrow">
+                                    <div class="row listing-row">
                                         Listing ID: <?php echo $listings_row['listing_id'] ?>
                                     </div>
-                                    <div class="row listingrow">
+                                    <div class="row listing-row">
                                         Freelancer: <?php echo $freelancers_row["fname"] . " " . $freelancers_row["lname"] ?>
                                     </div>
-                                    <div class="row listingrow">"
+                                    <div class="row listing-row">
                                         Description: <?php echo $listings_row['description'] ?>
                                     </div>
-                                    <div class="row listingrow">
-                                       Find out more >> <a href="#">Visit <?php echo $freelancers_row["fname"] . " " . $freelancers_row["lname"]. "'s page" ?> </a>
+                                    <div class="row listing-row">
+                                       <a href="#">Visit <?php echo $freelancers_row["fname"] . " " . $freelancers_row["lname"]. "'s page" ?> </a>
                                     </div>
                                 </div>
                             </div>

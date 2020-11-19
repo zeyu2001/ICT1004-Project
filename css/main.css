@@ -273,15 +273,14 @@ footer {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .listing {
     padding: 20px;
-    background-color: gainsboro;
+    border: 1px solid gray;
+    margin: 20px;
 }
-.listingrow{
+.listing-row{
     padding: 5px;
-    background-color: lightgray;
 }
 
 .listing-image {
     height:160px;
-    background-color: lightgray;
     margin: 5px;
 }
