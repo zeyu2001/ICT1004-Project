@@ -21,19 +21,7 @@
             <!-- Left-aligned Nav Links --> 
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <?php
-                        $link = '<a class="nav-link" href=';
-                        if ($_SERVER['REQUEST_URI'] === "/" || $_SERVER['REQUEST_URI'] === "/index.php")
-                        {
-                            $link .= "#about";
-                        }
-                        else {
-                            $link .= "index.php";
-                        }
-                        $link .= ">";
-                        echo $link;
-                        echo "About Us</a>";
-                    ?>
+                    <a class="nav-link" href='index.php#about'>About Us</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="listings.php" data-toggle="dropdown">

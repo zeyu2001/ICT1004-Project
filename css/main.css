@@ -7,6 +7,12 @@
 5. Footer
 6. Sliders
 7. Listings
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Scroll to Hyperlinks */
+html {
+    scroll-behavior: smooth;
+}
 
 /* 1. Material Icons
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
