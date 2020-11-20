@@ -38,7 +38,7 @@
             </div>
             
             <section id="about">
-                <h1 data-aos="fade-down">About</h1>
+                <h1 data-aos="fade-down">About Us</h1>
                 <div data-aos="fade-down">
                     <p>
                         In this unprecedented pandemic, gig work has been more popular than ever
