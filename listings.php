@@ -43,10 +43,39 @@
                                 </div>
                                 <div class="col-sm-10">
                                     <div class="row listing-row">
-                                        Listing ID: <?php echo $listings_row['listing_id'] ?>
+                                        <h2><?php echo $listings_row['title'] ?></h2>
                                     </div>
                                     <div class="row listing-row">
-                                        Freelancer: <?php echo $freelancers_row["fname"] . " " . $freelancers_row["lname"] ?>
+                                        Name: <?php 
+                                        $fname = $freelancers_row['fname'];
+                                        $lname = $freelancers_row['lname'];
+
+                                        if ($fname)
+                                        {
+                                            $name = $fname . " " . $lname;
+                                        }
+                                        else
+                                        {
+                                            $name = $lname;
+                                        }
+                                        echo $name
+                                            ?>
+                                    </div>
+                                    <div class="row listing-row">
+                                        Type: <?php 
+                                            switch ($listings_row['type'])
+                                            {
+                                                case 'full-stack':
+                                                    echo "Full Stack Development";
+                                                    break;
+                                                case 'front-end':
+                                                    echo "Front End Development";
+                                                    break;
+                                                case 'back-end':
+                                                    echo "Back End Development";
+                                                    break;
+                                            }
+                                        ?>
                                     </div>
                                     <div class="row listing-row">
                                         Description: <?php echo $listings_row['description'] ?>

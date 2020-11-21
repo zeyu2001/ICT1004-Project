@@ -6,7 +6,7 @@
                    maxlength="45" 
                    placeholder ="e.g. PHP"
                    name="skill1-name" value=""
-                   pattern="^[a-zA-Z\s\.,!?]*$">
+                   pattern="^[a-zA-Z\s\.\-,!?]*$">
         </div>                                    
     </div>
 
@@ -32,7 +32,7 @@
                    maxlength="45" 
                    placeholder ="e.g. MySQL"
                    name="skill2-name" value=""
-                   pattern="^[a-zA-Z\s\.,!?]*$">
+                   pattern="^[a-zA-Z\s\.\-,!?]*$">
         </div>
     </div>
 
@@ -58,7 +58,7 @@
                    maxlength="45" 
                    placeholder ="e.g. JavaScript"
                    name="skill3-name" value=""
-                   pattern="^[a-zA-Z\s\.,!?]*$">
+                   pattern="^[a-zA-Z\s\.\-,!?]*$">
         </div>
     </div>
 

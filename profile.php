@@ -65,9 +65,9 @@
             <div class="col-md mb-3">
                 <div class="card">
                     <div class="text-center bg-light">
-                        <img class="card-img-top rounded-circle w-auto" 
+                        <img class="card-img-top rounded-circle w-auto profile-pic" 
                              src="https://bootdey.com/img/Content/avatar/avatar7.png" 
-                             alt="Profile Picture" width="150px">
+                             alt="Profile Picture" width="350" height="350">
                     </div>
                     <div class="card-body">
                         <div class="icon-right">

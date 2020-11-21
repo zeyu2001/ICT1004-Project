@@ -24,14 +24,14 @@
         <label for="headline">Headline:</label>
         <input class="form-control" type="text" id="headline" required
              name="headline" value="<?php echo $headline ?>"
-             pattern="^[a-zA-Z\s\.,!?]*$">
+             pattern="^[a-zA-Z\s\.\-,!?]*$">
     </div>
 
     <div class="form-group">
         <label for="location">Location:</label>
         <input class="form-control" type="text" id="location" required
              name="location" value="<?php echo $location ?>"
-             pattern="^[a-zA-Z\s\.,!?]*$">
+             pattern="^[a-zA-Z\s\.\-,!?]*$">
     </div>
 
     <div class="form-group">

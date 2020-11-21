@@ -3,7 +3,7 @@
         
         <!-- Center-aligned Brand --> 
         <a class="navbar-brand mx-auto" href="index.php">
-            <img alt="LOGO" class="navbar-logo" src="images/logo_word.png">
+            <img alt="LOGO" width="231" height="50" class="navbar-logo" src="images/logo_word.png">
         </a>
 
         <!-- Right-aligned Mobile Hamburger Menu -->
@@ -23,16 +23,27 @@
                 <li class="nav-item">
                     <a class="nav-link" href='index.php#about'>About Us</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="listings.php" data-toggle="dropdown">
-                        Find Freelancers
-                    </a>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="listings.php">Front-End Developer</a>
-                      <a class="dropdown-item" href="listings.php">Back-End Developer</a>
-                      <a class="dropdown-item" href="listings.php">Full-Stack Developer</a>
-                    </div>
-                </li>
+                
+                <!-- Freelancer: Display "My Listings" -->
+                <?php if (isset($_SESSION['account_type']) && $_SESSION['account_type'] === 'Freelancer'):?>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href='my_listings.php'>My Listings</a>
+                        </li>
+                
+                <!-- Company / Public: Display "Find Freelancers" -->
+                <?php else: ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="listings.php" data-toggle="dropdown">
+                                Find Freelancers
+                            </a>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="listings.php">Front-End Developer</a>
+                              <a class="dropdown-item" href="listings.php">Back-End Developer</a>
+                              <a class="dropdown-item" href="listings.php">Full-Stack Developer</a>
+                            </div>
+                        </li>
+                <?php endif; ?>
             </ul> 
             
             <!-- Right-aligned Nav Links -->
@@ -40,8 +51,15 @@
     
                 <!--  If user is logged in, provide link to profile -->
                 <?php if (isset($_SESSION['display_name'])): ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="profile.php"><?php echo $_SESSION["display_name"] ?></a>
+                
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="profile.php" data-toggle="dropdown">
+                            <?php echo $_SESSION["display_name"] ?>
+                        </a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="profile.php">My Profile</a>
+                          <a class="dropdown-item" href="logout.php">Logout</a>
+                        </div>
                     </li>
                     
                 <!--  Else, provide link to login -->

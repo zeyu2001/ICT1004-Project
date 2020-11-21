@@ -2,10 +2,10 @@
     const namefields_filter = '/^[a-zA-Z\s]+$/';
     const passwords_filter = '/^.{8,}$/';
     const email_filter = '/^[a-z0-9][_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
-    const headline_filter = '/^[a-zA-Z\s\.,!?]*$/';
-    const location_filter = '/^[a-zA-Z\s\.,!?]*$/';
-    const description_filter = '/^[a-zA-Z\s\.,!?]*$/';
-    const skill_name_filter = '/^[a-zA-Z\s\.,!?]*$/';
+    const headline_filter = '/^[a-zA-Z\s\.\-,!?]*$/';
+    const location_filter = '/^[a-zA-Z\s\.\-,!?]*$/';
+    const description_filter = '/^[a-zA-Z\s\.\-,!?]*$/';
+    const skill_name_filter = '/^[a-zA-Z\s\.\-,!?]*$/';
     
     /*
      * Validates the input and returns the sanitized input. When sanitization

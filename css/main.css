@@ -5,7 +5,7 @@
 3. Landing Page
 4. Buttons
 5. Footer
-6. Sliders
+6. Profile
 7. Listings
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -31,7 +31,7 @@ html {
     float: right;
 }
 
-.icon-right h2 {
+.icon-right h1, h2 {
     display: inline-block;
 }
 
@@ -58,6 +58,7 @@ body { padding-top: 100px; }
 /* Navbar Brand Logo */
 .navbar-logo {
     height: 50px;
+    width: auto;
 }
 
 /* Mobile Devices */
@@ -248,8 +249,13 @@ footer {
     font-size: 0.9em;
 }
 
-/* Sliders
+/* 6. Profile
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.profile-pic {
+    height: 300px;
+    width: auto;
+}
 
 /* 
  * Hidden Labels
