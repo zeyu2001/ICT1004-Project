@@ -88,52 +88,7 @@
                                 <div class="modal-body">
                                 
                                     <!-- Form to Update Profile Display Information -->
-                                    <form action="process_profile.php" method="post" id="profile-form"> 
-                                        <div class="form-group">
-                                            <label for="fname">First Name:</label>
-                                            <input class="form-control" type="text" id="fname"
-                                                maxlength="45" name="fname" value="<?php echo $fname ?>"
-                                                pattern="^[a-zA-Z\s]*$">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="lname">Last Name:</label> 
-                                            <input class="form-control" type="text" id="lname" required
-                                                maxlength="45"  name="lname" value="<?php echo $lname ?>"
-                                                pattern="^[a-zA-Z\s]+$">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="email">Email:</label>
-                                            <input class="form-control" type="email" id="email" required
-                                                 name="email" value="<?php echo $email ?>" 
-                                                 pattern="^[a-z0-9][_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="headline">Headline:</label>
-                                            <input class="form-control" type="text" id="headline" required
-                                                 name="headline" value="<?php echo $headline ?>"
-                                                 pattern="^[a-zA-Z\s\.,!?]*$">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="location">Location:</label>
-                                            <input class="form-control" type="text" id="location" required
-                                                 name="location" value="<?php echo $location ?>"
-                                                 pattern="^[a-zA-Z\s\.,!?]*$">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="description">Description:</label>
-                                            <textarea class="form-control" form="profile-form" name="description"><?php echo $description ?></textarea>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <button class="btn btn-primary" type="submit">Update</button> 
-                                        </div>
-                                    </form>
-                                    <!-- END Form -->
+                                    <?php include "profile_form.php" ?>
                                 
                                 </div>
                                 <div class="modal-footer">
@@ -170,91 +125,7 @@
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                         </div>
                                         <div class="modal-body">
-                                            
-                                            <form action="process_skills.php">
-
-                                                <div class="form-row align-items-center">
-                                                    <div class="col-md-12 mb-3">
-                                                        <label for="skill1-name">Skill 1 Name</label> 
-                                                        <input class="form-control" type="text" id="skill1-name" required
-                                                               maxlength="45" 
-                                                               placeholder ="e.g. PHP"
-                                                               name="skill1-name" value=""
-                                                               pattern="^[a-zA-Z\s\.,!?]*$">
-                                                    </div>                                    
-                                                </div>
-
-                                                <div class="form-row align-items-center">
-                                                    <div class="col-md-3 mb-3">
-                                                        <label for="skill1-value">Skill 1 Value</label>
-                                                        <input class="form-control skill-value" required 
-                                                               name="skill1-value" id="skill1-value" 
-                                                               type="number" min="1" max="100" placeholder="e.g. 50">
-                                                    </div>
-                                                    <div class="col-md-9 mb-3">
-                                                        <label for="skill1-slider" class="label-hidden">Skill 1 Slider</label> 
-                                                        <input name="skill1-slider" id="skill1-slider" 
-                                                               type="range" min="1" max="100" value="50" 
-                                                               class=" form-control slider skill-slider">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-row align-items-center">
-                                                    <div class="col-md-12 mb-3">
-                                                        <label for="skill2-name">Skill 2 Name</label> 
-                                                        <input class="form-control" type="text" id="skill2-name" required
-                                                               maxlength="45" 
-                                                               placeholder ="e.g. MySQL"
-                                                               name="skill2-name" value=""
-                                                               pattern="^[a-zA-Z\s\.,!?]*$">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-row align-items-center">
-                                                    <div class="col-md-3 mb-3">
-                                                        <label for="skill2-value">Skill 2 Value</label>
-                                                        <input class="form-control skill-value" required 
-                                                               name="skill2-value" id="skill2-value" 
-                                                               type="number" min="1" max="100" placeholder="e.g. 50">
-                                                    </div>
-                                                    <div class="col-md-9 mb-3">
-                                                        <label for="skill2-slider" class="label-hidden">Skill 2 Slider</label> 
-                                                        <input name="skill2-slider" id="skill2-slider" 
-                                                               type="range" min="1" max="100" value="50" 
-                                                               class=" form-control slider skill-slider">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-row align-items-center">
-                                                    <div class="col-md-12 mb-3">
-                                                        <label for="skill3-name">Skill 3 Name</label> 
-                                                        <input class="form-control" type="text" id="skill3-name" required
-                                                               maxlength="45" 
-                                                               placeholder ="e.g. JavaScript"
-                                                               name="skill3-name" value=""
-                                                               pattern="^[a-zA-Z\s\.,!?]*$">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-row align-items-center">
-                                                    <div class="col-md-3 mb-3">
-                                                        <label for="skill3-value">Skill 3 Value</label>
-                                                        <input class="form-control skill-value" required 
-                                                               name="skill3-value" id="skill3-value" 
-                                                               type="number" min="1" max="100" placeholder="e.g. 50">
-                                                    </div>
-                                                    <div class="col-md-9 mb-3">
-                                                        <label for="skill3-slider" class="label-hidden">Skill 3 Slider</label> 
-                                                        <input name="skill3-slider" id="skill3-slider" 
-                                                               type="range" min="1" max="100" value="50" 
-                                                               class=" form-control slider skill-slider">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-row">
-                                                    <button class="btn btn-primary" type="submit">Update</button> 
-                                                </div>
-                                            </form>
+                                            <?php include "skills_form.php" ?>
                                         </div>
                                         <div class="modal-footer">
                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
