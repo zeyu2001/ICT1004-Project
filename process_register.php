@@ -15,7 +15,8 @@
             "pwd_confirm" => "",
             "address" => "",
             "postalcode" => "",
-            "country" => ""
+            "country" => "",
+            "account_type" => ""
            ];
 
     // validation filters
@@ -28,18 +29,24 @@
                 "email" => ["filter" => FILTER_VALIDATE_REGEXP,
                             "options" => ["regexp" => email_filter]
                             ],
+                "email_conf" => ["filter" => FILTER_VALIDATE_REGEXP,
+                            "options" => ["regexp" => email_filter]
+                            ],
                 "pwd" => ["filter" => FILTER_VALIDATE_REGEXP,
                           "options" => ["regexp" => '@[A-Z]@', // 1 CAPITAL LETTER
                                         "regexp" => '@[a-z]@', // 1 small letter
                                         "regexp" => '@[0-9]@', // 1 number
                                         "regexp" => '@[^\w]@'] // 1 special character
                         ],
-        "pwd_confirm" => ["filter" => FILTER_VALIDATE_REGEXP,
+                "pwd_confirm" => ["filter" => FILTER_VALIDATE_REGEXP,
                           "options" => ["regexp" => '@[A-Z]@', // 1 CAPITAL LETTER
                                         "regexp" => '@[a-z]@', // 1 small letter
                                         "regexp" => '@[0-9]@', // 1 number
                                         "regexp" => '@[^\w]@'] // 1 special character
-                        ]
+                        ],
+                "postalcode" => ["filter" => FILTER_VALIDATE_REGEXP, 
+                            "options" => ["regexp" => numbers_only_filter]
+                            ]
         ];
     
     //---------------------------------------------------------------------------
