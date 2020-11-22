@@ -38,9 +38,10 @@
                                 Find Freelancers
                             </a>
                             <div class="dropdown-menu">
-                              <a class="dropdown-item" href="listings.php">Front-End Developer</a>
-                              <a class="dropdown-item" href="listings.php">Back-End Developer</a>
-                              <a class="dropdown-item" href="listings.php">Full-Stack Developer</a>
+                                <a class="dropdown-item" href="listings.php">All Developers</a>
+                              <a class="dropdown-item" href="listings.php?type=front-end">Front-End Developer</a>
+                              <a class="dropdown-item" href="listings.php?type=back-end">Back-End Developer</a>
+                              <a class="dropdown-item" href="listings.php?type=full-stack">Full-Stack Developer</a>
                             </div>
                         </li>
                 <?php endif; ?>

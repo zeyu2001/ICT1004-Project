@@ -56,7 +56,8 @@
                     echo $errorMsg;
                     exit();
                 }
-
+                
+                $i = 0;
                 while($listings_row = $listings_result->fetch_assoc()){
                     list($return_code, $freelancers_result, $errorMsg) = query_db("SELECT fname, lname FROM manyhires_freelancers WHERE freelancer_id=?", array($listings_row['freelancer_id']));
 
@@ -173,8 +174,13 @@
                             </div>
                         </div>
                     </div>
-                <?php }
-            ?>
+                <?php $i++;
+                }
+                
+                // Display message if no results found
+                if ($i === 0): ?>
+                    <p>You have no listings at the moment. Create a listing to get noticed!</p>
+                <?php endif; ?>
             </form>
         </main>
         <?php

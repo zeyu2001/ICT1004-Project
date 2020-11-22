@@ -6,7 +6,7 @@
     const location_filter = '/^[a-zA-Z\s\.\-,!?]*$/';
     const description_filter = '/^[a-zA-Z\s\.\-,!?]*$/';
     const skill_name_filter = '/^[a-zA-Z\s\.\-,!?]*$/';
-    const numbers_only_filter = '/^[0-9]*/';
+    const numbers_only_filter = '/^[0-9]*$/';
     
     /*
      * Validates the input and returns the sanitized input. When sanitization
