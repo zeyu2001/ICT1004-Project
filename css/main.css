@@ -224,7 +224,7 @@ body, html {
     font-size: 0.8em;
 }
 
-.citationWhite{
+.citationWhite {
     color: white;
 }
 
@@ -393,21 +393,38 @@ footer {
     margin: 5px;
 }
 
-/*8. Registration page
+/*8. Registration Page
 -------------------------------------------------
 */
-.registerBg {
-    background-image: url("../images/hello.jpg");
-    background-position: 90% 50%;
-    background-size: 200%;
+.parallax-form {
+    background-image: url("../images/connected.jpg");
+    height: 700px;
     background-repeat: no-repeat;
     padding: 4%;
 }
 
+@media (max-width: 576px) {
+    .parallax-form
+    {
+        height: 1000px;
+    }
+}
+
 .formBg {
-    color: white;
     font-weight: 500;
-    background-color: hsla(0,0%,50%, 0.7);
-    border-radius: 25px;
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
     padding: 2%;
+    
+    /* Pefectly align in the middle */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.parallax-code {
+    background-image: url("../images/code_bg.jpg");
+    height: 300px;
 }
