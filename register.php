@@ -14,7 +14,8 @@
         <header class="container">
             <h1>JOIN US!</h1>
         </header>
-        <main class="registerBg"> 
+        <main class="registerBg">
+            <span class="citationWhite">Photo by <a href="https://unsplash.com/@lastly?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Tyler Lastovich</a> on <a href="https://unsplash.com/s/photos/welcome?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
             <div class="container formBg">
                 <form method="post" action="process_register.php">
                 <div class="form-group form-row">
