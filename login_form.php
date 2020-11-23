@@ -1,4 +1,3 @@
-<img alt="" class="float-right login_logo" src="images/manyhires.png">
 <form action="process_login.php">
     <div class="form-group">
         <div class="col-md-6">

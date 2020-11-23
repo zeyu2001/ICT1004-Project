@@ -7,6 +7,7 @@
 5. Footer
 6. Profile
 7. Listings
+8. Registration and Login
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 /* Scroll to Hyperlinks */
@@ -372,11 +373,6 @@ footer {
     padding-top: 5%;
 }
 
-.login_logo{
-    padding-top: 3%;
-    padding-right: 10%;
-}
-
 /* 7. Listings
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .listing {
@@ -393,9 +389,8 @@ footer {
     margin: 5px;
 }
 
-/*8. Registration Page
--------------------------------------------------
-*/
+/* 8. Registration and Login
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .parallax-form {
     background-image: url("../images/connected.jpg");
     height: 700px;
@@ -427,4 +422,12 @@ footer {
 .parallax-code {
     background-image: url("../images/code_bg.jpg");
     height: 300px;
+}
+
+
+.parallax-login-form {
+    background-image: url("../images/buildings.jpg");
+    height: 300px;
+    background-repeat: no-repeat;
+    padding: 4%;
 }
