@@ -90,6 +90,30 @@ $(document).ready(function()
         closeDropdown
     );
     
+    /* Toggle form input fields based on Account Type */
+    var companyNameInput, freelancerNameInput;
+    var accountTypeInput = $('#account_type');
+    
+    function toggleRegisterFields()
+    {
+        companyNameInput = $('#companyNameInput');
+        freelancerNameInput = $('#freelancerNameInput');
+        
+        if (accountTypeInput.val() === "corporate") {
+            companyNameInput.show();
+            freelancerNameInput.hide();
+            $('#lname').removeAttr('required');
+        } 
+        else {
+            companyNameInput.hide();
+            $('#company_name').removeAttr('required');
+            freelancerNameInput.show();
+        }
+    }
+    
+    toggleRegisterFields(); // For the initial view
+    accountTypeInput.on('change', toggleRegisterFields);
+    
     /* 
      * Skill Sliders 
      * 
@@ -123,17 +147,4 @@ $(document).ready(function()
         output = document.getElementById($(this).attr("id").replace("value", "slider"));
         output.value = parseInt(this.value);
     });
-    
-    /*
-     * WORK IN PROGRESS
-     * change form inputs according to different account types
-     */
-    
-//    function UpdateFormType()
-//    {
-//        var classes = "col"
-//        var obj = document.getElementById("account_type");
-//        obj.className += " hide" + obj.value;
-//    };
-//    document.getElementById("account_type").addEventListener("change", UpdateFormType);
 });

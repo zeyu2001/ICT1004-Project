@@ -11,9 +11,14 @@
             . "(email, password, fname, lname, description, location, headline, address, postalcode, country) "
             . "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
+    $QUERY_INSERT_COMPANY = "INSERT INTO manyhires_companies "
+            . "(email, password, name, description, location, headline, address, postalcode, country) "
+            . "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    
     // array to contain the input fields
     $form = ["fname" => "",
             "lname" => "",
+            "company_name" => "",
             "email" => "",
             "email_conf" => "",
             "pwd" => "",
@@ -29,6 +34,9 @@
                             "options" => ["regexp" => namefields_filter]
                             ],
                 "lname" => ["options" => FILTER_VALIDATE_REGEXP, 
+                            "options" => ["regexp" => namefields_filter]
+                            ],
+                "company_name" => ["options" => FILTER_VALIDATE_REGEXP, 
                             "options" => ["regexp" => namefields_filter]
                             ],
                 "email" => ["filter" => FILTER_VALIDATE_REGEXP,
@@ -94,7 +102,12 @@
         if(empty($_POST[$key]))
         {
             // empty input in required field
-            if($key != "fname" && $key != "address" && $key != "postalcode")
+            if($key != "fname" && $key != "company_name" && $_POST['account_type'] === 'freelancer')
+            {
+                $error_msg .= "$key field cannot be empty.<br>";
+                $success = false;
+            }
+            else if($key != "fname" && $key != "lname" && $_POST['account_type'] === 'corporate')
             {
                 $error_msg .= "$key field cannot be empty.<br>";
                 $success = false;
@@ -176,6 +189,28 @@
                         list($return_code, $result, $error_msg) = query_db($QUERY_INSERT_FREELANCER, 
                             array(
                                 $data['email'], $data['pwd'], $data['fname'], $data['lname'], "Add a description...",
+                                "Add a location...", "Add a headline...", $data['address'], $data['postalcode'], $data['country']
+                            ));
+                        if ($return_code === 0)
+                        {
+                            echo "<h1> Registration Successful </h1>";
+                            echo "<h2> Thank you for joining us. </h2>";
+                            echo "<p> Next step: complete your profile to get noticed! </p>"; 
+                            echo "<a class='green-button' href='login.php'> Login </a>";
+                        }
+                        else
+                        {
+                            echo "<h1> Oops! </h1>";
+                            echo "<h2>The following input errors were detected:</h2>";
+                            echo "<p>" . $error_msg . "</p>"; 
+                            echo "<a class='red-button' href='register.php'> Return to Sign Up </a>";
+                        }
+                    }
+                    else if ($data['account_type'] === 'corporate')
+                    {
+                        list($return_code, $result, $error_msg) = query_db($QUERY_INSERT_COMPANY, 
+                            array(
+                                $data['email'], $data['company_name'], $data['lname'], "Add a description...",
                                 "Add a location...", "Add a headline...", $data['address'], $data['postalcode'], $data['country']
                             ));
                         if ($return_code === 0)

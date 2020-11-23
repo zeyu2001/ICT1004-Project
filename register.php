@@ -27,7 +27,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="form-group form-row">
+                <div class="form-group form-row" id="freelancerNameInput">
                     <div class="col">
                         <label for="fname">First Name:</label>
                         <input class="form-control" id="fname" name="fname" type="text" 
@@ -37,6 +37,13 @@
                         <label for="lname">Last Name:</label>
                         <input class="form-control" id="lname" name="lname" type="text" 
                                placeholder="e.g. Bond" required pattern="^[a-zA-Z\s]+$">
+                    </div>
+                </div>
+                <div class="form-group form-row" id="companyNameInput">
+                    <div class="col">
+                        <label for="company_name">Company Name:</label>
+                        <input class="form-control" id="company_name" name="company_name" type="text" 
+                               placeholder="e.g. Amazon" pattern="^[a-zA-Z\s]+$">
                     </div>
                 </div>
                 <div class="form-group form-row">
