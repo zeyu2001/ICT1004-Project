@@ -42,7 +42,7 @@
                         </a>
                     </p>
                     <div class="landing-segment" data-aos="fade-down">
-                        <h3 class="landing-heading">For Employers</h3>
+                        <h2 class="landing-heading">For Employers</h2>
                         <p>
                             In this unprecedented pandemic, gig work has been more popular than ever
                             before and we aim to connect free-lance developers to you to meet your needs.
@@ -52,7 +52,7 @@
                         </p>
                     </div>
                     <div class="landing-segment" data-aos="fade-down">
-                        <h3 class="landing-heading">For Freelancers</h3>
+                        <h2 class="landing-heading">For Freelancers</h2>
                         <p>
                             If you are a free-lancer looking for work opportunities, we can easily connect
                             you with employment opportunities. Our network has connected over 1200 coders 
@@ -81,7 +81,7 @@
                         </a>
                     </p>
                     <div class="landing-segment" data-aos="fade-down">
-                        <h3 class="landing-heading">The Future of Recruiting</h3>
+                        <h2 class="landing-heading">The Future of Recruiting</h2>
                         <p>
                         We aim to provide a leading platform for businesses and freelancers to be able to find each other
                         on a dedicated platform. We believe that every individual has their own talent when it comes to their work

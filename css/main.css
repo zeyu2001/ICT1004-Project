@@ -175,6 +175,7 @@ body, html {
 
 .landing-heading
 {
+    width: 100%;
     text-align: center;
     letter-spacing: 5px;
     text-transform: uppercase;
