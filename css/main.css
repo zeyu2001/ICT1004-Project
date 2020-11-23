@@ -150,61 +150,82 @@ body, html {
     height: 100%;
 }
 
-.parallax-work {
-    
-    /* 
-     * Image Attribution / Citation 
-     * Text will appear at the bottom right
-     */
-    /*display: flex;*/
-/*    align-items: flex-end;*/
-    padding: 20px;
+.parallax {
+    position: relative;
     margin: 0px 0px 20px 0px;
-    
-/*    font-size: 0.8em;*/
-    
-    height: 500px;
-    background-image: url("../images/work.jpg");
+    padding: 20px;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.parallax-work
+{
+    background-image: url("../images/work.jpg");
+    height: 400px;
 }
 
 .parallax-rooftop {
-    
-    /* 
-     * Image Attribution / Citation 
-     * Text will appear at the bottom right
-     */
-    /*display: flex;*/
-    /*align-items: flex-end;*/
-    padding: 20px;
-    margin: 0px 0px 20px 0px;
-    
-/*    font-size: 0.8em;*/
-    
-    height: 500px;
-    background-image: url("../images/code_bg.jpg");
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url("../images/coding_on_rooftop.jpg");
+    height: 400px;
 }
-#about, #mission
+
+.landing-heading
 {
-    background-color: white;
-    border-radius: 25px;
-    padding: 25px;
+    text-align: center;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font: 20px "Lato", sans-serif;
+    color: #111;
+    margin: 10px;
+}
+
+.landing-segment
+{
+    padding: 10px 0px;
+    margin: 20px 0px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.caption {
+    display: inline-flex;
+    
+    /* Pefectly align in the middle */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.inside-caption
+{
+    text-transform: uppercase;
+    text-align: center;
+    
+    background-color: #c92a2a;
+    color: white;
+    padding: 18px 18px 18px 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+    margin: auto;
+}
+
+.citation
+{
+    font-size: 0.8em;
 }
 
 /* Turn off parallax scrolling for all tablets and phones. */
 @media only screen and (max-device-width: 1366px) {
-    .parallax-work {
+    .parallax {
         background-attachment: scroll;
     }
 }
@@ -218,7 +239,7 @@ body, html {
 a.red-button {
     appearance: button;
     text-decoration: none;
-    background-color: #e00000;
+    background-color: #c92a2a;
     border: none;
     color: white;
     text-align: center;
@@ -231,7 +252,7 @@ a.red-button {
 a.green-button {
     appearance: button;
     text-decoration: none;
-    background-color: #218003;
+    background-color: #2b542c;
     border: none;
     color: white;
     text-align: center;
