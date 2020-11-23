@@ -1,11 +1,16 @@
 <?php
     session_start();
     include "validate.inc.php";
+    include "db_functions.inc.php";
 
     //---------------------------------------------------------------------------
     //------------------------   GLOBAL VARIABLES -------------------------------
     //---------------------------------------------------------------------------
-
+    
+    $QUERY_INSERT_FREELANCER = "INSERT INTO manyhires_freelancers "
+            . "(email, password, fname, lname, description, location, headline, address, postalcode, country) "
+            . "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    
     // array to contain the input fields
     $form = ["fname" => "",
             "lname" => "",
@@ -46,7 +51,10 @@
                         ],
                 "postalcode" => ["filter" => FILTER_VALIDATE_REGEXP, 
                             "options" => ["regexp" => numbers_only_filter]
-                            ]
+                            ],
+                "country" => ["filter" => FILTER_SANITIZE_STRING],
+                "address" => ["filter" => FILTER_SANITIZE_STRING],
+                "account_type" => ["filter" => FILTER_SANITIZE_STRING]
         ];
     
     //---------------------------------------------------------------------------
@@ -163,8 +171,28 @@
             <?php
                 if ($success)
                 {
-                    // TODO: Add to DB
-                    echo "Success.";
+                    if ($data['account_type'] === 'freelancer')
+                    {
+                        list($return_code, $result, $error_msg) = query_db($QUERY_INSERT_FREELANCER, 
+                            array(
+                                $data['email'], $data['pwd'], $data['fname'], $data['lname'], "Add a description...",
+                                "Add a location...", "Add a headline...", $data['address'], $data['postalcode'], $data['country']
+                            ));
+                        if ($return_code === 0)
+                        {
+                            echo "<h1> Registration Successful </h1>";
+                            echo "<h2> Thank you for joining us. </h2>";
+                            echo "<p> Next step: complete your profile to get noticed! </p>"; 
+                            echo "<a class='green-button' href='login.php'> Login </a>";
+                        }
+                        else
+                        {
+                            echo "<h1> Oops! </h1>";
+                            echo "<h2>The following input errors were detected:</h2>";
+                            echo "<p>" . $error_msg . "</p>"; 
+                            echo "<a class='red-button' href='register.php'> Return to Sign Up </a>";
+                        }
+                    }
                 }
                 else
                 {
