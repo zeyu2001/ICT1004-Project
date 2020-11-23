@@ -138,6 +138,8 @@ body { padding-top: 100px; }
     background-repeat: no-repeat;
     color: black;
     height: 100vh;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 /* 
