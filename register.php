@@ -72,7 +72,7 @@
                                        pattern="^[a-z0-9][_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$">
                             </div>
                             <div class="col-sm-6">
-                                <label for="email_Conf">Confirm Email:</label>
+                                <label for="email_conf">Confirm Email:</label>
                                 <input class="form-control" id="email_conf" name="email_conf" type="email" 
                                        placeholder="e.g. jamesbond@gmail.com" required
                                        pattern="^[a-z0-9][_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$">
