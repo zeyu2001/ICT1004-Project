@@ -44,7 +44,7 @@
                             <a href="register.php">Sign Up page</a>. </p>
                             <?php include 'login_form.php'?>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-4 my-auto">
                             <img alt="" class="mx-auto d-block" src="images/manyhires.png">
                         </div>
                     </div>
