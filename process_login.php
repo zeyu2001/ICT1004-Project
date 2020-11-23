@@ -85,7 +85,7 @@
                     {
                         $_SESSION['id'] = $row['company_id'];
                         $_SESSION['account_type'] = 'Company';
-                        $_SESSION['display_name'] = $row[$name];
+                        $_SESSION['display_name'] = $row['name'];
                                 
                         // Login successful
                         header("location:index.php");

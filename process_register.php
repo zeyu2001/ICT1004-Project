@@ -210,7 +210,7 @@
                     {
                         list($return_code, $result, $error_msg) = query_db($QUERY_INSERT_COMPANY, 
                             array(
-                                $data['email'], $data['company_name'], $data['lname'], "Add a description...",
+                                $data['email'], $data['pwd'], $data['company_name'], "Add a description...",
                                 "Add a location...", "Add a headline...", $data['address'], $data['postalcode'], $data['country']
                             ));
                         if ($return_code === 0)
