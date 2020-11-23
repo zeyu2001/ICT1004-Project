@@ -156,14 +156,14 @@ body, html {
      * Image Attribution / Citation 
      * Text will appear at the bottom right
      */
-    display: flex;
-    align-items: flex-end;
+    /*display: flex;*/
+/*    align-items: flex-end;*/
     padding: 20px;
     margin: 0px 0px 20px 0px;
     
-    font-size: 0.8em;
+/*    font-size: 0.8em;*/
     
-    height: 300px;
+    height: 500px;
     background-image: url("../images/work.jpg");
 
     /* Create the parallax scrolling effect */
@@ -171,6 +171,35 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.parallax-rooftop {
+    
+    /* 
+     * Image Attribution / Citation 
+     * Text will appear at the bottom right
+     */
+    /*display: flex;*/
+    /*align-items: flex-end;*/
+    padding: 20px;
+    margin: 0px 0px 20px 0px;
+    
+/*    font-size: 0.8em;*/
+    
+    height: 500px;
+    background-image: url("../images/code_bg.jpg");
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#about, #mission
+{
+    background-color: white;
+    border-radius: 25px;
+    padding: 25px;
 }
 
 /* Turn off parallax scrolling for all tablets and phones. */
