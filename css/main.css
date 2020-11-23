@@ -393,37 +393,35 @@ footer {
 
 /* 8. Registration and Login
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.parallax-form {
+.parallax-connected {
+    margin: 0px;
     background-image: url("../images/connected.jpg");
-    height: 700px;
-    background-repeat: no-repeat;
-    padding: 4%;
-}
-
-@media (max-width: 576px) {
-    .parallax-form
-    {
-        height: 1000px;
-    }
-}
-
-.formBg {
-    font-weight: 500;
-    background-color: white;
-    border-radius: 10px;
-    width: 90%;
-    padding: 2%;
-    
-    /* Pefectly align in the middle */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.parallax-code {
-    background-image: url("../images/code_bg.jpg");
     height: 300px;
+}
+
+/* 
+ * On smaller devices, the registration form background is as per normal
+ * On larger devices, "extend" the parallax effect
+ */
+@media (min-width: 768px) {
+    .parallax-connected-form {
+        background-image: url("../images/connected.jpg");
+        height: 800px;
+        background-repeat: no-repeat;
+        padding: 4%;
+    }
+    .formBg {
+        font-weight: 500;
+        background-color: white;
+        border-radius: 10px;
+        padding: 2%;
+
+        /* Pefectly align in the middle */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 

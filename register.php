@@ -12,29 +12,20 @@
             include "nav.inc.php"; 
         ?>
         <header>
-            <div class="parallax parallax-code">
+            <div class="parallax parallax-connected">
                 <div class="caption">
                     <div class="inside-caption"><h1>Join Us</h1></div>
                 </div>
             </div>
-            <div class="container">
-                <p class="citation">
-                    Photo by 
-                    <a href="https://unsplash.com/@hishahadat?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
-                        Shahadat Rahman
-                    </a> 
-                    on 
-                    <a href="https://unsplash.com/s/photos/electronic?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
-                        Unsplash
-                    </a>
-                </p>
-                <h2> Registration Form </h2>
-                <p> Thank you for choosing to join our growing network of global talent. Submit this registration form to start getting connected to jobs you love. </p>
-            </div>
         </header>
         <main>
-            <div class="parallax parallax-form">
+            <div class="parallax parallax-connected-form">
                 <div class="container formBg">
+                    
+                    <h2> Registration Form </h2>
+                    <p> Thank you for choosing to join our growing network of global talent. 
+                        Submit this registration form to start getting connected to jobs you love. </p>
+                    
                     <form method="post" action="process_register.php">
                         <div class="form-group form-row">
                             <div class="col">
