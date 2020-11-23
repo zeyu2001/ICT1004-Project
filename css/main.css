@@ -389,15 +389,21 @@ footer {
     margin: 5px;
 }
 
-/*
-    FORM TYPES
+/*8. Registration page
+-------------------------------------------------
 */
-/*hidecorporate
-{
-    display: none;
+.registerBg {
+    background-image: url("../images/hello.jpg");
+    background-position: 90% 50%;
+    background-size: 200%;
+    background-repeat: no-repeat;
+    padding: 4%;
 }
 
-hidefreelancer
-{
-    display: none;
-}*/
+.formBg {
+    color: white;
+    font-weight: 500;
+    background-color: hsla(0,0%,50%, 0.7);
+    border-radius: 25px;
+    padding: 2%;
+}

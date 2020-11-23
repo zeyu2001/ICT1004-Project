@@ -12,10 +12,11 @@
             include "nav.inc.php"; 
         ?>
         <header class="container">
-            <h1>Register</h1>
+            <h1>JOIN US!</h1>
         </header>
-        <main class="container"> 
-            <form method="post" action="process_register.php">
+        <main class="registerBg"> 
+            <div class="container formBg">
+                <form method="post" action="process_register.php">
                 <div class="form-group form-row">
                     <div class="col-sm-3">
                         <label for="account_type">Type of account:</label>
@@ -97,6 +98,8 @@
                     <button class="btn btn-primary my-2 my-sm-0" type="submit">Submit</button>
                 </div>
             </form>
+            </div>
+            
         </main>
         <?php
             include "footer.inc.php";
