@@ -387,7 +387,8 @@ footer {
 }
 
 .listing-image {
-    height:160px;
+    width: 100%;
+    height: auto;
     margin: 5px;
 }
 

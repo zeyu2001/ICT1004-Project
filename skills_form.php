@@ -1,4 +1,5 @@
-<form action="process_skills.php" method="post" id="skills-form">
+<form action="process_freelancer_skills.php" method="post" id="skills-form">
+    
     <div class="form-row align-items-center">
         <div class="col-md-12 mb-3">
             <label for="skill1-name">Skill 1 Name</label> 

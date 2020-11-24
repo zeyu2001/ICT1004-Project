@@ -58,57 +58,56 @@
                         // There would only be one row, since freelancer_id is unique
                         $freelancers_row = $freelancers_result->fetch_assoc();
                         ?>
-                        <div class="col-sm-12">
-                            <div class="row listing">
-                                <div class="col-sm-2">
-                                    <img class="rounded listing-image" 
-                                         src="<?php echo "ProfilePicturesPFP". $listings_row['freelancer_id']. ".jpg" ?>"
-                                         alt="Failed to load profile picture">
+                        <div class="row listing">
+                            <div class="col-md-3 my-auto">
+                                <img class="rounded-circle listing-image"
+                                    width="100%"
+                                    src="<?php echo "uploads/freelancer-". $listings_row['freelancer_id']. "/profile.jpg" ?>"
+                                    alt="Failed to load profile picture">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="row listing-row">
+                                    <h2><?php echo $listings_row['title'] ?></h2>
                                 </div>
-                                <div class="col-sm-10">
-                                    <div class="row listing-row">
-                                        <h2><?php echo $listings_row['title'] ?></h2>
-                                    </div>
-                                    <div class="row listing-row">
-                                        Name: <?php 
-                                        $fname = $freelancers_row['fname'];
-                                        $lname = $freelancers_row['lname'];
+                                <div class="row listing-row">
+                                    Name: <?php 
+                                    $fname = $freelancers_row['fname'];
+                                    $lname = $freelancers_row['lname'];
 
-                                        if ($fname)
-                                        {
-                                            $name = $fname . " " . $lname;
-                                        }
-                                        else
-                                        {
-                                            $name = $lname;
-                                        }
-                                        echo $name
-                                            ?>
-                                    </div>
-                                    <div class="row listing-row">
-                                        Type: <?php 
-                                            switch ($listings_row['type'])
-                                            {
-                                                case 'full-stack':
-                                                    echo "Full Stack Development";
-                                                    break;
-                                                case 'front-end':
-                                                    echo "Front End Development";
-                                                    break;
-                                                case 'back-end':
-                                                    echo "Back End Development";
-                                                    break;
-                                            }
+                                    if ($fname)
+                                    {
+                                        $name = $fname . " " . $lname;
+                                    }
+                                    else
+                                    {
+                                        $name = $lname;
+                                    }
+                                    echo $name
                                         ?>
-                                    </div>
-                                    <div class="row listing-row">
-                                        Description: <?php echo $listings_row['description'] ?>
-                                    </div>
-                                    <div class="row listing-row">
-                                       <a href="profile.php?user-id=<?php echo $listings_row['freelancer_id'] ?>&profile-type=Freelancer">
-                                           Visit <?php echo $freelancers_row["fname"] . " " . $freelancers_row["lname"]. "'s page" ?> 
-                                       </a>
-                                    </div>
+                                </div>
+                                <div class="row listing-row">
+                                    Type: <?php 
+                                        switch ($listings_row['type'])
+                                        {
+                                            case 'full-stack':
+                                                echo "Full Stack Development";
+                                                break;
+                                            case 'front-end':
+                                                echo "Front End Development";
+                                                break;
+                                            case 'back-end':
+                                                echo "Back End Development";
+                                                break;
+                                        }
+                                    ?>
+                                </div>
+                                <div class="row listing-row">
+                                    Description: <?php echo $listings_row['description'] ?>
+                                </div>
+                                <div class="row listing-row">
+                                   <a href="profile.php?user-id=<?php echo $listings_row['freelancer_id'] ?>&profile-type=Freelancer">
+                                       Visit <?php echo $freelancers_row["fname"] . " " . $freelancers_row["lname"]. "'s page" ?> 
+                                   </a>
                                 </div>
                             </div>
                         </div>

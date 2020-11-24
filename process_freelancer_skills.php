@@ -7,6 +7,35 @@
     $NUM_SKILLS = 3;
     $QUERY_UPDATE_SKILLS_BY_FREELANCER_ID = "UPDATE manyhires_freelancers_skills SET name=?, value=? WHERE freelancer_id=? AND skill_id=?";
     
+    // Initialize skills if they don't exist
+    $QUERY_INITIALISE_SKILLS_BY_FREELANCER_ID = "INSERT INTO manyhires_freelancers_skills "
+            . "(freelancer_id, skill_id, name, value) "
+            . "VALUES (?, ?, ?, ?)";
+    
+    $QUERY_GET_FREELANCER_SKILLS_BY_ID = "SELECT * FROM manyhires_freelancers_skills WHERE freelancer_id=? ORDER BY skill_id" ;
+    list($return_code, $result, $errorMsg) = query_db($QUERY_GET_FREELANCER_SKILLS_BY_ID, array($_SESSION['id']));
+    
+    if (!$return_code === 0)
+    {
+        echo $errorMsg;
+        exit();
+    }
+    else if ($result->num_rows == 0)
+    {
+        for ($i = 1; $i <= $NUM_SKILLS; $i++)
+        {
+            list($return_code, $result, $errorMsg) = query_db($QUERY_INITIALISE_SKILLS_BY_FREELANCER_ID, 
+                    array(
+                        $_SESSION['id'], $i, "Add a skill...", 50
+                    ));
+            if (!$return_code === 0)
+            {
+                echo $errorMsg;
+                exit();
+            }
+        }
+    }
+    
     $success = true;
     $errorMsg = "";
     

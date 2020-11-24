@@ -3,7 +3,76 @@
     
     include "validate.inc.php";
     include "db_functions.inc.php";
+
+    /* 
+     * Process the profile picture file upload.
+     * Adapted from W3 Schools PHP File Upload example.
+     * https://www.w3schools.com/php/php_file_upload.asp
+     * 
+     * Returns: 0 if error, 1 otherwise.
+     */
+    function processFileInput()
+    {
+        $target_dir = "uploads/freelancer-". $_SESSION['id']. "/";
+        $target_file = $target_dir . "profile.jpg";
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($_FILES["profile-pic"]["name"], PATHINFO_EXTENSION));
     
+        // Check if image file is a actual image or fake image
+        if (isset($_FILES['profile-pic']) && !empty($_FILES['profile-pic']['name'])) {
+          $check = getimagesize($_FILES["profile-pic"]["tmp_name"]);
+          
+            if ($check !== false) {
+                $uploadOk = 1;
+                
+            } else {
+                echo "File is not an image.";
+                $uploadOk = 0;
+            }
+        }
+        else
+        {
+            // No file was uploaded, so no error
+            return 1;
+        }
+
+        // Check file size
+        if ($_FILES["profile-pic"]["size"] > 500000) {
+          echo "Sorry, your file is too large.";
+          $uploadOk = 0;
+        }
+
+        // Allow certain file formats
+        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        && $imageFileType != "gif" ) {
+          echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+          $uploadOk = 0;
+        }
+
+        // Check if $uploadOk is set to 0 by an error
+        if ($uploadOk == 0) {
+            echo "Sorry, your file was not uploaded.";
+        // if everything is ok, try to upload file
+        } else {
+            
+            if (!is_dir($target_dir)) {
+                mkdir($target_dir, 0755, true);
+            }
+            
+            if (file_exists($target_file))
+            {
+                chmod($target_file,0755);
+                unlink($target_file);        // Remove the file
+            }
+            
+            if (!move_uploaded_file($_FILES["profile-pic"]["tmp_name"], $target_file)) {
+              echo "Sorry, there was an error uploading your file.";
+              $uploadOk = 0;
+            }
+        }
+        return $uploadOk;
+    }
+
     $QUERY_UPDATE_FREELANCER_BY_ID = "UPDATE manyhires_freelancers SET email=?, fname=?, lname=?, description=?, location=?, headline=? WHERE freelancer_id=?";
     
     $errorMsg = "";
@@ -55,10 +124,21 @@
             {
                 $_SESSION["display_name"] = $lname;
             }
-
-            // Redirect the user
-            header("location:profile.php");
-            exit();
+            
+            if (processFileInput() === 1)
+            {
+                // Redirect the user
+                header("location:profile.php");
+                exit();
+            }
+            else
+            {
+                $output = "<h1> Oops! </h1>";
+                $output.="<h2> File upload unsuccessful. </h2>";
+                $output.="<p> Please try again later. </p>"; 
+                $output.="<a class='red-button' href='profile.php'> Return to Profile </a>";
+            }
+            
         }
         else
         {

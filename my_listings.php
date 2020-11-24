@@ -70,104 +70,103 @@
                     // There would only be one row, since freelancer_id is unique
                     $freelancers_row = $freelancers_result->fetch_assoc();
                     ?>
-                    <div class="col-sm-12">
-                        <div class="row listing">
-                            <div class="col-sm-2">
-                                <img class="rounded listing-image" 
-                                     src="<?php echo "ProfilePicturesPFP". $listings_row['freelancer_id']. ".jpg" ?>"
-                                     alt="Failed to load profile picture">
+                    <div class="row listing">
+                        <div class="col-md-3 my-auto">
+                            <img class="rounded-circle listing-image"
+                                width="100%"
+                                src="<?php echo "uploads/freelancer-". $listings_row['freelancer_id']. "/profile.jpg" ?>"
+                                alt="Failed to load profile picture">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row listing-row">
+                                <h2><?php echo $listings_row['title'] ?></h2>
                             </div>
-                            <div class="col-sm-10">
-                                <div class="row listing-row">
-                                    <h2><?php echo $listings_row['title'] ?></h2>
-                                </div>
-                                <div class="row listing-row">
-                                    Name: <?php 
-                                        $fname = $freelancers_row['fname'];
-                                        $lname = $freelancers_row['lname'];
+                            <div class="row listing-row">
+                                Name: <?php 
+                                    $fname = $freelancers_row['fname'];
+                                    $lname = $freelancers_row['lname'];
 
-                                        if ($fname)
-                                        {
-                                            $name = $fname . " " . $lname;
-                                        }
-                                        else
-                                        {
-                                            $name = $lname;
-                                        }
-                                        echo $name
-                                    ?>
-                                </div>
-                                <div class="row listing-row">
-                                    Type: <?php 
-                                        switch ($listings_row['type'])
-                                        {
-                                            case 'full-stack':
-                                                echo "Full Stack Development";
-                                                break;
-                                            case 'front-end':
-                                                echo "Front End Development";
-                                                break;
-                                            case 'back-end':
-                                                echo "Back End Development";
-                                                break;
-                                        }
-                                    ?>
-                                </div>
-                                <div class="row listing-row">
-                                    Description: <?php echo $listings_row['description'] ?>
-                                </div>
-                                <div class="row listing-row">
-                                   <a href="#">Visit <?php echo $freelancers_row["fname"] . " " . $freelancers_row["lname"]. "'s page" ?> </a>
-                                </div>
+                                    if ($fname)
+                                    {
+                                        $name = $fname . " " . $lname;
+                                    }
+                                    else
+                                    {
+                                        $name = $lname;
+                                    }
+                                    echo $name
+                                ?>
+                            </div>
+                            <div class="row listing-row">
+                                Type: <?php 
+                                    switch ($listings_row['type'])
+                                    {
+                                        case 'full-stack':
+                                            echo "Full Stack Development";
+                                            break;
+                                        case 'front-end':
+                                            echo "Front End Development";
+                                            break;
+                                        case 'back-end':
+                                            echo "Back End Development";
+                                            break;
+                                    }
+                                ?>
+                            </div>
+                            <div class="row listing-row">
+                                Description: <?php echo $listings_row['description'] ?>
+                            </div>
+                            <div class="row listing-row">
+                               <a href="#">Visit <?php echo $freelancers_row["fname"] . " " . $freelancers_row["lname"]. "'s page" ?> </a>
+                            </div>
 
-                                <div class="row listing-row align-items-center">
-                                    <a href="#" class="red-button" data-toggle="modal" data-target="#delete-listing-<?php echo $listings_row['listing_id'] ?>">
-                                        Delete Listing
-                                        <i class="material-icons">delete_forever</i>
-                                    </a>
-                                </div>
+                            <div class="row listing-row align-items-center">
+                                <a href="#" class="red-button" data-toggle="modal" data-target="#delete-listing-<?php echo $listings_row['listing_id'] ?>">
+                                    Delete Listing
+                                    <i class="material-icons">delete_forever</i>
+                                </a>
+                            </div>
 
-                                <!-- Modal to Confirm Delete Listing-->
-                                <div id="delete-listing-<?php echo $listings_row['listing_id'] ?>" class="modal fade" role="dialog">
-                                    <div class="modal-dialog">
+                            <!-- Modal to Confirm Delete Listing-->
+                            <div id="delete-listing-<?php echo $listings_row['listing_id'] ?>" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
 
-                                        <!-- Modal content-->
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h2 class="modal-title">Delete Listing</h2>
-                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            </div>
-                                            <div class="modal-body">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h2 class="modal-title">Delete Listing</h2>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
 
-                                                <h3>Are you sure?</h3>
-                                                <p> You are about to delete a listing. <b>This action is irreversible.</b> </p>
-                                                
-                                                <!-- Form to Delete a Listing -->
-                                                <form action="process_listing_delete.php" method="post">
-                                                    <div class="form-group">
-                                                        <label for="listing_title_confirm"> Enter the full title of your listing to proceed: </label>
+                                            <h3>Are you sure?</h3>
+                                            <p> You are about to delete a listing. <b>This action is irreversible.</b> </p>
 
-                                                        <!-- Require user to confirm his action by confirming the name of his listing -->
-                                                        <input type="hidden" name="listing_title" 
-                                                               value="<?php echo $listings_row['title'];?>">
+                                            <!-- Form to Delete a Listing -->
+                                            <form action="process_listing_delete.php" method="post">
+                                                <div class="form-group">
+                                                    <label for="listing_title_confirm"> Enter the full title of your listing to proceed: </label>
 
-                                                        <input class="form-control" type="text" name="listing_title_confirm" 
-                                                               required pattern="<?php echo preg_quote($listings_row['title']);?>">
-                                                    </div>
+                                                    <!-- Require user to confirm his action by confirming the name of his listing -->
+                                                    <input type="hidden" name="listing_title" 
+                                                           value="<?php echo $listings_row['title'];?>">
 
-                                                    <!-- Press button to delete listing -->
-                                                    <div class="form-group">
-                                                        <button class="btn btn-danger" type="submit" name="listing_id" 
-                                                                value="<?php echo $listings_row['listing_id'] ?>">
-                                                            Yes, Delete Listing
-                                                        </button>
-                                                    </div>
-                                                </form>
-                                                
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            </div>
+                                                    <input class="form-control" type="text" name="listing_title_confirm" 
+                                                           required pattern="<?php echo preg_quote($listings_row['title']);?>">
+                                                </div>
+
+                                                <!-- Press button to delete listing -->
+                                                <div class="form-group">
+                                                    <button class="btn btn-danger" type="submit" name="listing_id" 
+                                                            value="<?php echo $listings_row['listing_id'] ?>">
+                                                        Yes, Delete Listing
+                                                    </button>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                         </div>
                                     </div>
                                 </div>

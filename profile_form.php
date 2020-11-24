@@ -1,4 +1,10 @@
-<form action="process_profile.php" method="post" id="profile-form"> 
+<form action="process_freelancer_profile.php" method="post" id="profile-form" enctype="multipart/form-data"> 
+    
+    <div class="form-group">
+        <label for="profile-pic">Profile Picture:</label>
+        <input class="form-control-file" type="file" name="profile-pic" id="profile-pic">
+    </div>
+    
     <div class="form-group">
         <label for="fname">First Name:</label>
         <input class="form-control" type="text" id="fname"
@@ -24,14 +30,14 @@
         <label for="headline">Headline:</label>
         <input class="form-control" type="text" id="headline" required
              name="headline" value="<?php echo $headline ?>"
-             pattern="^[a-zA-Z\s\.\-,!?]*$">
+             pattern="^[a-zA-Z0-9\s\.\-,!?]*$">
     </div>
 
     <div class="form-group">
         <label for="location">Location:</label>
         <input class="form-control" type="text" id="location" required
              name="location" value="<?php echo $location ?>"
-             pattern="^[a-zA-Z\s\.\-,!?]*$">
+             pattern="^[a-zA-Z0-9\s\.\-,!?]*$">
     </div>
 
     <div class="form-group">
