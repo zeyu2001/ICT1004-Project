@@ -5,7 +5,13 @@
  */
 
 /*
- * num
+ * num - number of invitations to echo out
+ * coy_names - array of company names that invited the freelancer
+ * coy_emails - array of emails from the company
+ * $coy_msgs - array of messages from companies
+ * 
+ * PLEASE TAKE NOTE THAT ELEMENTS MUST BE IN THE CORRECT ORDER IN EACH ARRAY
+ * EG. Tencent Pte Ltd is the second element, thus its email and message must be the second element also
  */
 
 $coy_names = ["ManyHire Pte Ltd", "YourMom Inc.", "Fucking Industries"];
