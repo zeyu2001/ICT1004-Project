@@ -3,10 +3,10 @@
         <div class="card">
             
             <!-- Display Profile Picture if Exists -->
-            <?php if (file_exists("uploads/freelancer-". $_SESSION['id']. "/profile.jpg")): ?>
+            <?php if (file_exists("uploads/freelancer-". $id. "/profile.jpg")): ?>
                 <div class="text-center bg-light">
                     <img class="card-img-top rounded-circle w-auto profile-pic" 
-                         src="<?php echo "uploads/freelancer-". $_SESSION['id']. "/profile.jpg" ?>"
+                         src="<?php echo "uploads/freelancer-". $id. "/profile.jpg" ?>"
                          alt="Profile Picture" width="350" height="350">
                 </div>
             <?php endif; ?>

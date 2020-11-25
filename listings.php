@@ -109,6 +109,56 @@
                                        Visit <?php echo $freelancers_row["fname"] . " " . $freelancers_row["lname"]. "'s page" ?> 
                                    </a>
                                 </div>
+                                
+                                <!-- Only companies should be able to send invitations --> 
+                                <?php if (isset($_SESSION['id']) && $_SESSION['account_type'] === 'Company'): ?>
+                                    <div class="row listing-row align-items-center">
+                                        <a href="#" class="green-button" data-toggle="modal" data-target="#invite-<?php echo $listings_row['listing_id'] ?>">
+                                            Invite Freelancer
+                                            <i class="material-icons">send</i>
+                                        </a>
+                                    </div>
+
+                                    <!-- Modal to Send Invitation -->
+                                    <div id="invite-<?php echo $listings_row['listing_id'] ?>" class="modal fade" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h2 class="modal-title">Invite Freelancer</h2>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <h3>Write a Message</h3>
+                                                    <p> <?php echo $name ?> will see your invitation. </p>
+
+                                                    <!-- Form to Send Invitation -->
+                                                    <form action="process_send_invite.php" method="post">
+                                                        <div class="form-group">
+                                                            <label for="message">Message:</label>
+                                                            <input class="form-control" type="text" name="message" 
+                                                                   required pattern="^[a-zA-Z0-9\s\.\-,!?]*$">
+                                                        </div>
+
+                                                        <!-- Press button to Send Invitation -->
+                                                        <div class="form-group">
+                                                            <button class="btn btn-success" type="submit" name="listing_id" 
+                                                                    value="<?php echo $listings_row['listing_id'] ?>">
+                                                                Send Invitation
+                                                            </button>
+                                                        </div>
+                                                    </form>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                     <?php  $i++;

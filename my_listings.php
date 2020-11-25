@@ -119,6 +119,9 @@
                             <div class="row listing-row">
                                <a href="#">Visit <?php echo $freelancers_row["fname"] . " " . $freelancers_row["lname"]. "'s page" ?> </a>
                             </div>
+                            
+                            <!-- Get "My Invitations" -->
+                            <?php include "my_listings_invitations.inc.php" ?>
 
                             <div class="row listing-row align-items-center">
                                 <a href="#" class="red-button" data-toggle="modal" data-target="#delete-listing-<?php echo $listings_row['listing_id'] ?>">

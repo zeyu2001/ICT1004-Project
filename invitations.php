@@ -14,7 +14,7 @@
         <main class="container">
             
             <?php
-                    include 'process_invitation.php';
+                    include 'invitations.inc.php';
                     listInvitations(3, $coy_names, $coy_emails, $coy_msgs);
             ?>
 <!--            <div class="card flex-row flex-wrap">
