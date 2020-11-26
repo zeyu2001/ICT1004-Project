@@ -53,7 +53,7 @@
                                         </div>
                                         <div class="row align-items-center">
                                             <div class="col-md-12 mb-3">
-                                                <a href='#' class='btn btn-primary'> View Company Profile </a>
+                                                <a href='profile.php?user-id=<?php echo $company_row['company_id'] ?>&&profile-type=Company' class='btn btn-primary'> View Company Profile </a>
                                             </div>
                                         </div>
                                         <div class="row align-items-center">
