@@ -38,27 +38,39 @@
                                 $company_row = $company_result->fetch_assoc(); ?>
                                 
                                 <div class='card flex-row flex-wrap bg-light mb-3'>
-                                    <div class='card-header'>
-                                    </div>
                                     <div class='card-body'>
-                                        <div class="row align-items-center">
-                                            <div class="col-md-12 mb-3">
-                                                <h4 class='card-title'> <?php echo $company_row['name'] ?></h4>
-                                            </div>
-                                        </div>
-                                        <div class="row align-items-center">
-                                            <div class="col-md-12 mb-3">
-                                                <p class='card-text'> <?php echo $invitations_row['description'] ?> </p>
-                                            </div>
-                                        </div>
-                                        <div class="row align-items-center">
-                                            <div class="col-md-12 mb-3">
-                                                <a href='profile.php?user-id=<?php echo $company_row['company_id'] ?>&&profile-type=Company' class='btn btn-primary'> View Company Profile </a>
-                                            </div>
-                                        </div>
-                                        <div class="row align-items-center">
-                                            <div class="col-md-12 mb-3">
-                                                <a href='#' class='card-link '> <?php echo $company_row['email'] ?> </a>
+                                        
+                                        <div class="row">
+                                            <!-- Display Profile Picture if Exists -->
+                                            <?php if (file_exists("uploads/company-". $invitations_row['company_id']. "/profile.jpg")): ?>
+                                                <div class='col-md-4 my-auto'>
+                                                    <img class="rounded-circle listing-image" width="100%" 
+                                                         src="<?php echo "uploads/company-". $invitations_row['company_id'] . "/profile.jpg" ?>"
+                                                         alt="Profile Picture" width="350" height="350">
+                                                </div>
+                                            <?php endif; ?>
+
+                                            <div class='col-md-8'>
+                                                <div class="row align-items-center">
+                                                    <div class="col-md-12 mb-3">
+                                                        <h4 class='card-title'> <?php echo $company_row['name'] ?></h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row align-items-center">
+                                                    <div class="col-md-12 mb-3">
+                                                        <p class='card-text'> <?php echo $invitations_row['description'] ?> </p>
+                                                    </div>
+                                                </div>
+                                                <div class="row align-items-center">
+                                                    <div class="col-md-12 mb-3">
+                                                        <a href='profile.php?user-id=<?php echo $company_row['company_id'] ?>&&profile-type=Company' class='btn btn-primary'> View Company Profile </a>
+                                                    </div>
+                                                </div>
+                                                <div class="row align-items-center">
+                                                    <div class="col-md-12 mb-3">
+                                                        <a href='#' class='card-link '> <?php echo $company_row['email'] ?> </a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

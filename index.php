@@ -12,7 +12,9 @@
             include "nav.inc.php"; 
         ?>
         <header class="jumbotron text-center" id='index-jumbotron'>
-            <h1 class="display-4">Talent on Demand.</h1> 
+            <div class="landing-title">
+                <h1 class="display-4">Talent on Demand.</h1> 
+            </div>
             <p class="lead">The future of recruiting is here.</p>
             <a class="red-button" href="register.php">Create a free account</a>
             <a class="red-button" href="#about">Find out more</a>
