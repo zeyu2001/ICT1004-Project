@@ -14,32 +14,36 @@
             <div class="card-body">
                 <div class="icon-right">
                     <h1 class="card-title"><?php echo $display_name ?></h1>
-                    <i class="material-icons edit-icon" data-toggle="modal" data-target="#edit-profile">edit</i>
+                    <?php if ($can_edit): ?>    
+                        <i class="material-icons edit-icon" data-toggle="modal" data-target="#edit-profile">edit</i>
+                    <?php endif; ?>
                 </div>
+                
+                <?php if ($can_edit): ?>
+                    <!-- Modal -->
+                    <div id="edit-profile" class="modal fade" role="dialog">
+                      <div class="modal-dialog">
 
-                <!-- Modal -->
-                <div id="edit-profile" class="modal fade" role="dialog">
-                  <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title">Edit Profile</h2>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
 
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h2 class="modal-title">Edit Profile</h2>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <!-- Form to Update Profile Display Information -->
+                                <?php include "profile_form.php" ?>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
                         </div>
-                        <div class="modal-body">
 
-                            <!-- Form to Update Profile Display Information -->
-                            <?php include "profile_form.php" ?>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
+                      </div>
                     </div>
-
-                  </div>
-                </div>
+                <?php endif; ?>
 
                 <h2 class="card-subtitle mb-2 text-muted"><?php echo $headline ?></h2>
                 <p class="text-secondary mb-2"> <?php echo $location ?> </p>
@@ -53,28 +57,31 @@
                 <div class="slidecontainer">
                     <div class="icon-right">
                         <h2 class="card-title">My Skills</h2>
-                        <i class="material-icons edit-icon" data-toggle="modal" data-target="#edit-skills">edit</i>
+                        <?php if ($can_edit): ?>
+                            <i class="material-icons edit-icon" data-toggle="modal" data-target="#edit-skills">edit</i>
+                        <?php endif; ?>
                     </div>
+                    <?php if ($can_edit): ?>
+                        <!-- Modal -->
+                        <div id="edit-skills" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
 
-                    <!-- Modal -->
-                    <div id="edit-skills" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h2 class="modal-title">Edit Skills</h2>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
-                                <div class="modal-body">
-                                    <?php include "skills_form.php" ?>
-                                </div>
-                                <div class="modal-footer">
-                                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2 class="modal-title">Edit Skills</h2>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <?php include "skills_form.php" ?>
+                                    </div>
+                                    <div class="modal-footer">
+                                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
 
                     <div class="container">
                     <?php 

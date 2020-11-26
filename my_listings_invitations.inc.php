@@ -39,7 +39,6 @@
                                 
                                 <div class='card flex-row flex-wrap bg-light mb-3'>
                                     <div class='card-header'>
-                                        <img src='images/logo_graphic.png' alt=''>
                                     </div>
                                     <div class='card-body'>
                                         <div class="row align-items-center">
