@@ -16,8 +16,8 @@
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-md-6 order-md-1 order-2">
-                            <div class="landing-title">
-                                <h1 class="display-4">Talent on Demand.</h1> 
+                            <div>
+                                <h1 class="display-4 landing-title">Talent on Demand.</h1> 
                             </div>
                             <p class="lead">The future of recruiting is here.</p>
                             <a class="red-button" href="register.php">Create a free account</a>

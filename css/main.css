@@ -135,7 +135,7 @@ body { padding-top: 100px; }
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* For smaller screens */
 @media (min-width: 992px) {
-    .landing-title h1
+    .landing-title
     {
         font-size: 3rem;
     }
@@ -152,7 +152,7 @@ body { padding-top: 100px; }
 }
 
 @media (max-width: 992px) {
-    .landing-title h1
+    .landing-title
     {
         font-size: 2.5rem;
     }
@@ -391,7 +391,7 @@ a.green-button {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 footer {
     border-top: 5px solid gray;
-    padding-top: 20px;
+    padding: 20px;
     font-style: italic;
     text-align: center;
     font-size: 0.9em;

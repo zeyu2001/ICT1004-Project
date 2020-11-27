@@ -3,6 +3,8 @@
 </button>
 
 <footer class="container">
-    Copyright &copy; 2020 Zhang Zeyu, Ivan Ng Say Mun, Kuo Eugene, 
-    Chew En Rui Samuel, Darrell Lu Jun Qiang
+    <p> Copyright &copy; 2020 Zhang Zeyu, Ivan Ng, Eugene Kuo, 
+        Samuel Chew, Darrell Lu. </p>
+    <p> Photos retrieved from <a href="https://unsplash.com/">Unsplash</a>. </p>
+    <p> Illustrations retrieved from <a href="https://undraw.co/">Undraw</a>. </p>
 </footer>
