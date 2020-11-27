@@ -192,19 +192,33 @@
                                 "Add a location...", "Add a headline...", $data['address'], $data['postalcode'], $data['country']
                             ));
                         if ($return_code === 0)
-                        {
-                            echo "<h1> Registration Successful </h1>";
-                            echo "<h2> Thank you for joining us. </h2>";
-                            echo "<p> Next step: complete your profile to get noticed! </p>"; 
-                            echo "<a class='green-button' href='login.php'> Login </a>";
-                        }
+                        { ?>
+                            <div class="row">
+                                <div class="col-md-8 order-md-1 order-2">
+                                    <h1> Registration Successful </h1>
+                                    <h2> Thank you for joining us. </h2>
+                                    <p> Next step: complete your profile to get noticed! </p>
+                                    <a class='green-button' href='login.php'> Login </a>
+                                </div>
+                                <div class="col-md-4 order-md-2 order-1">
+                                    <img class="side-img mx-auto d-block" src="images/undraw_join.svg" alt="">
+                                </div>
+                            </div>
+                        <?php }
                         else
-                        {
-                            echo "<h1> Oops! </h1>";
-                            echo "<h2>The following input errors were detected:</h2>";
-                            echo "<p>" . $error_msg . "</p>"; 
-                            echo "<a class='red-button' href='register.php'> Return to Sign Up </a>";
-                        }
+                        { ?>
+                            <div class="row">
+                                <div class="col-md-8 order-md-1 order-2">
+                                    <h1> Oops! </h1>;
+                                    <h2>The following input errors were detected:</h2>
+                                    <?php echo "<p>" . $error_msg . "</p>"; ?>
+                                    <a class='red-button' href='register.php'> Return to Sign Up </a>
+                                </div>
+                                <div class="col-md-4 order-md-2 order-1">
+                                    <img class="side-img mx-auto d-block" src="images/undraw_warning.svg" alt="">
+                                </div>
+                            </div>
+                        <?php }
                     }
                     else if ($data['account_type'] === 'corporate')
                     {
@@ -214,28 +228,49 @@
                                 "Add a location...", "Add a headline...", $data['address'], $data['postalcode'], $data['country']
                             ));
                         if ($return_code === 0)
-                        {
-                            echo "<h1> Registration Successful </h1>";
-                            echo "<h2> Thank you for joining us. </h2>";
-                            echo "<p> Next step: complete your profile to get noticed! </p>"; 
-                            echo "<a class='green-button' href='login.php'> Login </a>";
-                        }
+                        { ?>
+                            <div class="row">
+                                <div class="col-md-8 order-md-1 order-2">
+                                    <h1> Registration Successful </h1>
+                                    <h2> Thank you for joining us. </h2>
+                                    <p> Next step: complete your profile to get noticed! </p>
+                                    <a class='green-button' href='login.php'> Login </a>
+                                </div>
+                                <div class="col-md-4 order-md-2 order-1">
+                                    <img class="side-img mx-auto d-block" src="images/undraw_join.svg" alt="">
+                                </div>
+                            </div>
+                        <?php }
                         else
-                        {
-                            echo "<h1> Oops! </h1>";
-                            echo "<h2>The following input errors were detected:</h2>";
-                            echo "<p>" . $error_msg . "</p>"; 
-                            echo "<a class='red-button' href='register.php'> Return to Sign Up </a>";
-                        }
+                        { ?>
+                            <div class="row">
+                                <div class="col-md-8 order-md-1 order-2">
+                                    <h1> Oops! </h1>;
+                                    <h2>The following input errors were detected:</h2>
+                                    <?php echo "<p>" . $error_msg . "</p>"; ?>
+                                    <a class='red-button' href='register.php'> Return to Sign Up </a>
+                                </div>
+                                <div class="col-md-4 order-md-2 order-1">
+                                    <img class="side-img mx-auto d-block" src="images/undraw_warning.svg" alt="">
+                                </div>
+                            </div>
+                        <?php }
                     }
                 }
                 else
-                {
-                    echo "<h1> Oops! </h1>";
-                    echo "<h2>The following input errors were detected:</h2>";
-                    echo "<p>" . $error_msg . "</p>"; 
-                    echo "<a class='red-button' href='register.php'> Return to Sign Up </a>";
-                }
+                { ?>
+                    <div class="row">
+                        <div class="col-md-8 order-md-1 order-2">
+                            <h1> Oops! </h1>;
+                            <h2>The following input errors were detected:</h2>
+                            <?php echo "<p>" . $error_msg . "</p>"; ?>
+                            <a class='red-button' href='register.php'> Return to Sign Up </a>
+                        </div>
+                        <div class="col-md-4 order-md-2 order-1">
+                            <img class="side-img mx-auto d-block" src="images/undraw_warning.svg" alt="">
+                        </div>
+                    </div>
+                <?php }
             ?>
         </main>
         <?php

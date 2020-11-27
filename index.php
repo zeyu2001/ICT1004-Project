@@ -22,9 +22,10 @@
                             <p class="lead">The future of recruiting is here.</p>
                             <a class="red-button" href="register.php">Create a free account</a>
                             <a class="red-button" href="#about">Find out more</a>
-                            <form id="searchBar" class="containter" action="listings.php" method="post">
+                            <form id="searchBar" class="containter" action="listings.php?" method="get">
                                 <div class="form-group mx-auto">
-                                    <input class="form-control border border-dark" name="input" type="search" placeholder="Search for talents" aria-label="Search">
+                                    <input class="form-control border border-dark" name="query" type="search" placeholder="Search for talents" aria-label="Search"
+                                           pattern="^[a-zA-Z0-9\s\.\-,!?]*$">
                                 </div>
                                 <button class="btn btn-danger my-2 my-sm-0" type="submit">Search</button>
                             </form>
@@ -77,7 +78,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 order-md-2 order-1" data-aos="fade-down">
-                            <img id="interview-img" class="mx-auto d-block" src="images/undraw_interview.svg" alt="">
+                            <img class="side-img mx-auto d-block" src="images/undraw_interview.svg" alt="">
                         </div>
                     </div>
                 </div>
@@ -102,7 +103,7 @@
                     </p>
                     <div class="row align-items-center">
                         <div class="col-md-4 order-md-1 order-2"  data-aos="fade-down">
-                            <img id="profile-img" class="mx-auto d-block" src="images/undraw_profile.svg" alt="">
+                            <img class="side-img mx-auto d-block" src="images/undraw_profile.svg" alt="">
                         </div>
                         <div class="col-md-8 order-md-2 order-1">
                             <div class="landing-segment" data-aos="fade-down">

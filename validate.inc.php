@@ -7,6 +7,7 @@
     const description_filter = '/^[a-zA-Z0-9\s\.\-,!?]*$/';
     const skill_name_filter = '/^[a-zA-Z\s\.\-,!?]*$/';
     const numbers_only_filter = '/^[0-9]*$/';
+    const query_filter = '/^[a-zA-Z0-9\s\.\-,!?]*$/';
     
     /*
      * Validates the input and returns the sanitized input. When sanitization

@@ -187,15 +187,7 @@ body { padding-top: 100px; }
     align-items: center;
 }
 
-#landing-img {
-    max-width: 100%;
-}
-
-#interview-img {
-    max-width: 100%;
-}
-
-#profile-img {
+.side-img {
     max-width: 100%;
 }
 

@@ -11,33 +11,84 @@
     <body> 
         <?php
             include "nav.inc.php"; 
+            include "validate.inc.php";
+            
+            $QUERY_FRONTEND = "SELECT * FROM manyhires_listings WHERE type='front-end'";
+            $QUERY_BACKEND = "SELECT * FROM manyhires_listings WHERE type='back-end'";
+            $QUERY_FULLSTACK = "SELECT * FROM manyhires_listings WHERE type='full-stack'";
+            $QUERY_ALL = "SELECT * FROM manyhires_listings";
+            
+            $success = true;
+            if (isset($_GET['query']) && !empty($_GET['query']))
+            {
+                $query = sanitize_input($_GET['query']);
+                if (!filter_var($query, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => query_filter))))
+                {
+                    $success = false; 
+                }
+                
+                else
+                {
+                    $QUERY_FRONTEND .= " AND (title LIKE '%" . $query . "%' OR description LIKE '%". $query . "%')";
+                    $QUERY_BACKEND .= " AND (title LIKE '%" . $query . "%' OR description LIKE '%". $query . "%')";
+                    $QUERY_FULLSTACK .= " AND (title LIKE '%" . $query . "%' OR description LIKE '%". $query . "%')";
+                    $QUERY_ALL .= " WHERE (title LIKE '%" . $query . "%' OR description LIKE '%". $query . "%')";
+                }
+                
+            }
         ?>
         <main class="container"> 
             <h1>Freelancer Listings</h1>
-                <?php
+            
+            <form class="containter" action="listings.php?" method="get">
+                <div class="form-group form-row">
+                    <div class="col-md-8 py-2">
+                        <label for="query" hidden>Search Keywords</label>
+                        <input class="form-control" name="query" type="search" placeholder="e.g. React.js" aria-label="Search"
+                               pattern="^[a-zA-Z0-9\s\.\-,!?]*$">
+                    </div>
+                    <div class="col-md-3 py-2">
+                        <label for="type" hidden="">Type</label>
+                        <select class="form-control form-control-md" name="type" id="account_type">
+                            <option value="">All</option>
+                            <option value="front-end">Front End</option>
+                            <option value="back-end">Back End</option>
+                            <option value="full-stack">Full Stack</option>
+                        </select>
+                    </div>
+                    <div class="col-md-1 mx-auto py-2 text-center">
+                        <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+                    </div>
+                </div>
                 
+            </form>
+            
+                <?php
+                    if(!$success): ?>
+                    <p> Sorry, we were unable to process your query. Showing all listings. </p>
+                <?php endif;
                     if(isset($_GET['type']))
                     {
                         // There should only be three valid 'type' parameters. Guard against XSS.
                         switch ($_GET['type'])
                         {
                             case "front-end":
-                                list($return_code, $listings_result, $errorMsg) = query_db("SELECT * FROM manyhires_listings WHERE type='front-end'", null);
+                                list($return_code, $listings_result, $errorMsg) = query_db($QUERY_FRONTEND, null);
                                 break;
                             case "back-end":
-                                list($return_code, $listings_result, $errorMsg) = query_db("SELECT * FROM manyhires_listings WHERE type='back-end'", null);
+                                list($return_code, $listings_result, $errorMsg) = query_db($QUERY_BACKEND, null);
                                 break;
                             case 'full-stack':
-                                list($return_code, $listings_result, $errorMsg) = query_db("SELECT * FROM manyhires_listings WHERE type='full-stack'", null);
+                                list($return_code, $listings_result, $errorMsg) = query_db($QUERY_FULLSTACK, null);
                                 break;
                             default:
-                                list($return_code, $listings_result, $errorMsg) = query_db("SELECT * FROM manyhires_listings", null);
+                                list($return_code, $listings_result, $errorMsg) = query_db($QUERY_ALL, null);
                                 break;
                         }
                     }
                     else
                     {
-                        list($return_code, $listings_result, $errorMsg) = query_db("SELECT * FROM manyhires_listings", null);
+                        list($return_code, $listings_result, $errorMsg) = query_db($QUERY_ALL, null);
                     }
                     if (!$return_code === 0)
                     {
@@ -166,7 +217,17 @@
                     
                     // Display message if no results found
                     if ($i === 0): ?>
-                        <p>Sorry, no freelancers are available at the moment. Please check back later!</p>
+                        <div class="row">
+                            <div class="col-md-8 order-md-1 order-2">
+                                <div class="col">
+                                    <p>Sorry, we could not find any matches for your query.</p>
+                                    <a href="listings.php" class="green-button">Show me all listings</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 order-md-2 order-1">
+                                <img class="side-img mx-auto d-block" src="images/undraw_empty.svg" alt="">
+                            </div>
+                        </div>
                     <?php endif; ?>
         </main>
         <?php

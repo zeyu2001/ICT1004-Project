@@ -118,10 +118,17 @@
             include "nav.inc.php"; 
         ?>
         <main class="container"> 
-            <h1> Oops! </h1>
-            <h2> Something went wrong. </h2>
-            <p><?php echo $errorMsg ?></p>
-            <a class='red-button' href='index.php'> Return to Home </a>
+            <div class="row">
+                <div class="col-md-8 order-md-1 order-2">
+                    <h1> Oops! </h1>
+                    <h2> Something went wrong. </h2>
+                    <p><?php echo $errorMsg ?></p>
+                    <a class='red-button' href='login.php'> Return to Login </a>
+                </div>
+                <div class="col-md-4 order-md-2 order-1">
+                    <img class="side-img mx-auto d-block" src="images/undraw_void.svg" alt="">
+                </div>
+            </div>
         </main>
         <?php
             include "footer.inc.php";
