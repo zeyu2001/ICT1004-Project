@@ -12,11 +12,13 @@
     {
         $id = $_GET['user-id'];
         $account_type = $_GET['profile-type'];
+        $can_edit = false;
     }
     else if (isset($_SESSION['id']) && isset($_SESSION['account_type']))
     {
         $id = $_SESSION['id'];
         $account_type = $_SESSION['account_type'];
+        $can_edit = true;
     }
     else
     {
@@ -85,6 +87,8 @@
                             
                         case 'Company':
                             $name = $row["name"];
+                            $headline = $row["headline"];
+                            include "profile_company.inc.php";
                             break;
                         
                         default:

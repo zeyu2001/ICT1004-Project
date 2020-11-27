@@ -32,7 +32,7 @@ html {
     float: right;
 }
 
-.icon-right h1, h2 {
+.icon-right h1, .icon-right h2 {
     display: inline-block;
 }
 
@@ -133,13 +133,97 @@ body { padding-top: 100px; }
 
 /* 3. Landing Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* For smaller screens */
+@media (min-width: 992px) {
+    .landing-title
+    {
+        font-size: 3rem;
+    }
+    
+    #index-jumbotron {
+        height: calc(100vh - 100px);
+        margin-bottom: 0;
+        background: white;
+    }
+    
+    #landing-img {
+        max-height: calc(100vh - 100px - 64px * 2);
+    }
+}
+
+@media (max-width: 992px) {
+    .landing-title
+    {
+        font-size: 2.5rem;
+    }
+    
+    #index-jumbotron {
+        height: calc(100vh - 70px);
+        margin-bottom: 0;
+        background: white;
+    }
+    
+    #landing-img {
+        max-height: calc(100vh - 70px - 64px * 2);
+    }
+}
+
+@media (max-width: 768px)
+{
+    #index-jumbotron {
+        height: calc(100vh - 70px);
+        margin-bottom: 0;
+        background: white;
+        text-align: center;
+    }
+    #landing-img {
+        max-height: calc(100vh - 70px - 400px);
+    }
+}
+
+/* Vertically Center Jumbotron Elements */
 #index-jumbotron {
-    background: linear-gradient(160deg, white 50%, #ff0000 50%, #ff0000 70%, white 70%);
-    background-repeat: no-repeat;
-    color: black;
-    height: 100vh;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.side-img {
+    max-width: 100%;
+}
+
+@media (min-width: 768px) {
+
+    .landing-title
+    {
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        border-right: .15em solid orange; /* The typwriter cursor */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+
+        animation: 
+            typing 3.5s steps(40, end),
+            blink-caret .75s step-end infinite;
+
+        background: none;
+        display: inline-block;
+    }
+    
+    .landing-title .display-4
+    {
+        display: inline-block; 
+    }
+    
+    /* The typing effect */
+    @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+    }
+    
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: red; }
+    }
 }
 
 /* 
@@ -178,8 +262,6 @@ body, html {
 
 .landing-heading
 {
-    width: 100%;
-    text-align: center;
     letter-spacing: 5px;
     text-transform: uppercase;
     font: 20px "Lato", sans-serif;
@@ -301,7 +383,7 @@ a.green-button {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 footer {
     border-top: 5px solid gray;
-    padding-top: 20px;
+    padding: 20px;
     font-style: italic;
     text-align: center;
     font-size: 0.9em;
@@ -431,4 +513,44 @@ footer {
     height: 300px;
     background-repeat: no-repeat;
     padding: 4%;
+}
+
+/*
+    messages
+    https://www.w3schools.com/howto/howto_css_chat.asp
+*/
+.chat-container-receive{
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+.chat-container-receive:after{
+    content: "";
+  clear: both;
+  display: table;
+}
+.chat-container-receive img{
+    float: left;
+    width:100px;
+}
+.chat-container-send{
+    border: 2px solid #ccc;
+    background-color: #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+.chat-container-send:after{
+    content: "";
+  clear: both;
+  display: table;
+}
+.chat-container-send img{
+    float: right;
+    width:100px;
+}
+.chat-container-send p{
+    float:right;
 }
