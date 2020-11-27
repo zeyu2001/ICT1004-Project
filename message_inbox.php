@@ -20,7 +20,7 @@
                 </div>
                 <div class="card-block px-2 w-75">
                     <h4 class="card-title">ManyHire Pte Ltd</h4>
-                    <p class="card-text border rounded">preview message asddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
+                    <p class="card-text border rounded text-wrap">preview message asddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</p>
                     <a href="#" class="btn btn-primary">reply</a>
                 </div>
             </div>

@@ -522,3 +522,43 @@ footer {
     background-repeat: no-repeat;
     padding: 4%;
 }
+
+/*
+    messages
+    https://www.w3schools.com/howto/howto_css_chat.asp
+*/
+.chat-container-receive{
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+.chat-container-receive:after{
+    content: "";
+  clear: both;
+  display: table;
+}
+.chat-container-receive img{
+    float: left;
+    width:100px;
+}
+.chat-container-send{
+    border: 2px solid #ccc;
+    background-color: #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+.chat-container-send:after{
+    content: "";
+  clear: both;
+  display: table;
+}
+.chat-container-send img{
+    float: right;
+    width:100px;
+}
+.chat-container-send p{
+    float:right;
+}
