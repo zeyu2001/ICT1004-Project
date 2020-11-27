@@ -79,7 +79,32 @@
                         </div>
                         <div class="col-md-9">
                             <div class="row listing-row">
-                                <h2><?php echo $listings_row['title'] ?></h2>
+                                <div class="icon-right">
+                                    <h2><?php echo $listings_row['title'] ?></h2>
+                                    <i class="material-icons edit-icon" data-toggle="modal" data-target="#edit-listing">edit</i>
+                                </div>
+                            </div>
+                            <div id="edit-listing" class="modal fade" role="dialog">
+                              <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2 class="modal-title">Edit Listing</h2>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <!-- Form to Update Listing Display Information -->
+                                        <?php include "update_listing.php" ?>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+
+                              </div>
                             </div>
                             <div class="row listing-row">
                                 Name: <?php 
