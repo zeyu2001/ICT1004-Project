@@ -32,7 +32,7 @@ html {
     float: right;
 }
 
-.icon-right h1, h2 {
+.icon-right h1, .icon-right h2 {
     display: inline-block;
 }
 
@@ -133,13 +133,70 @@ body { padding-top: 100px; }
 
 /* 3. Landing Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* For smaller screens */
+@media (min-width: 992px) {
+    .landing-title h1
+    {
+        font-size: 3rem;
+    }
+    
+    #index-jumbotron {
+        height: calc(100vh - 100px);
+        margin-bottom: 0;
+        background: white;
+    }
+    
+    #landing-img {
+        max-height: calc(100vh - 100px - 64px * 2);
+    }
+}
+
+@media (max-width: 992px) {
+    .landing-title h1
+    {
+        font-size: 2.5rem;
+    }
+    
+    #index-jumbotron {
+        height: calc(100vh - 70px);
+        margin-bottom: 0;
+        background: white;
+    }
+    
+    #landing-img {
+        max-height: calc(100vh - 70px - 64px * 2);
+    }
+}
+
+@media (max-width: 768px)
+{
+    #index-jumbotron {
+        height: calc(100vh - 70px);
+        margin-bottom: 0;
+        background: white;
+        text-align: center;
+    }
+    #landing-img {
+        max-height: calc(100vh - 70px - 400px);
+    }
+}
+
+/* Vertically Center Jumbotron Elements */
 #index-jumbotron {
-    background: linear-gradient(160deg, white 50%, #ff0000 50%, #ff0000 70%, white 70%);
-    background-repeat: no-repeat;
-    color: black;
-    height: 100vh;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+}
+
+#landing-img {
+    max-width: 100%;
+}
+
+#interview-img {
+    max-width: 100%;
+}
+
+#profile-img {
+    max-width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -213,8 +270,6 @@ body, html {
 
 .landing-heading
 {
-    width: 100%;
-    text-align: center;
     letter-spacing: 5px;
     text-transform: uppercase;
     font: 20px "Lato", sans-serif;
