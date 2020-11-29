@@ -60,7 +60,7 @@
                                         echo $message_row['message'];
                                         ?>
                                     </p>
-                                    <a href="messages.php" class="btn btn-primary">Message</a>
+                                    <a href="messages.php?id=<?php echo $user_row['company_id']?>" class="btn btn-primary">Message</a>
                                 </div>
                             </div>
                 <?php
@@ -127,7 +127,7 @@
                                         echo $message_row['message'];
                                         ?>
                                     </p>
-                                    <a href="messages.php" class="btn btn-primary">Message</a>
+                                    <a href="messages.php?id=<?php echo $user_row['freelancer_id']?>" class="btn btn-primary">Message</a>
                                 </div>
                             </div>
                 <?php
