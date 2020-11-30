@@ -48,10 +48,10 @@
                                     <p class="card-text border rounded text-wrap">
                                         <?php 
                                         if ($message_row['sender_type'] == "freelancer") {
-                                            echo "Me at ". $message_row['timestamp']. ": ";
+                                            echo "Me @". $message_row['timestamp']. ": ";
                                         }
                                         else {
-                                            echo $user_row['name']. " at ". $message_row['timestamp']. ": ";
+                                            echo $user_row['name']. " @". $message_row['timestamp']. ": ";
                                         }
                                         ?>
                                     </p>
@@ -115,10 +115,10 @@
                                     <p class="card-text border rounded text-wrap">
                                         <?php 
                                         if ($message_row['sender_type'] == "company") {
-                                            echo "Me at ". $message_row['timestamp']. ": ";
+                                            echo "Me @". $message_row['timestamp']. ": ";
                                         }
                                         else {
-                                            echo $user_row['fname']. " at ". $message_row['timestamp']. ":";
+                                            echo $user_row['fname']. " @". $message_row['timestamp']. ":";
                                         }
                                          ?>
                                     </p>

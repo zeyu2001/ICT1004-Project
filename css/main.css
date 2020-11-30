@@ -525,6 +525,7 @@ footer {
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
+    position: relative;
 }
 .chat-container-receive:after{
     content: "";
@@ -541,6 +542,7 @@ footer {
     border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
+    position: relative;
 }
 .chat-container-send:after{
     content: "";
@@ -554,3 +556,37 @@ footer {
 .chat-container-send p{
     float:right;
 }
+
+.chat-container-receive p{
+    float:left;
+}
+
+.bottomleft-aligned {
+    position: absolute;
+    left: 0;
+    bottom:0;
+}
+
+.bottomright-aligned {
+    position: absolute;
+    right: 0;
+    bottom:0;
+}
+
+.datestamp {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.datestamp::before, .datestamp::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #000;
+}
+.datestamp::before {
+    margin-right: 1em;
+}
+.datestamp::after {
+    margin-left: 1em;
+}
+
