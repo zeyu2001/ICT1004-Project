@@ -565,6 +565,7 @@ footer {
     position: absolute;
     left: 0;
     bottom:0;
+    display: inline-block;
 }
 
 .bottomright-aligned {
@@ -588,5 +589,13 @@ footer {
 }
 .datestamp::after {
     margin-left: 1em;
+}
+
+.bottomleft-aligned p {
+    float: left;
+}
+
+.dropdown {
+    float: right;
 }
 

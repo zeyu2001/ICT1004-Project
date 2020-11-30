@@ -57,12 +57,22 @@
             ?>
                                     <div class="chat-container-send ">
                                         <img class="rounded-circle listing-image" src="<?php echo "uploads/freelancer-". $chats_row['freelancer_id']. "/profile.jpg" ?>" alt="Profile Picture">
-                                        <p class="bottomleft-aligned ml-3">
-                                        <?php 
-                                            echo "Me @". $chats_row['timestamp'];
-                                        ?>
-                                        </p>
-                                        <p class="mr-3 mt-3"><?php echo $chats_row['message']; ?></p>
+                                        <div class="bottomleft-aligned ml-3">
+                                            <p>
+                                            <?php 
+                                                echo "Me @". $chats_row['timestamp'];
+                                            ?>
+                                            </p>
+                                            <a type="button" class="dropdown ml-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="material-icons">menu</i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-primary">
+                                                <button class="dropdown-item" href="#">Edit</button>
+                                                <button class="dropdown-item" href="#">Delete</button>                                 
+                                            </div>
+                                        </div>
+                                        
+                                        <p class="message mr-3 mt-3"><?php echo $chats_row['message']; ?></p>
                                     </div>
             <?php
                                 }
@@ -71,11 +81,13 @@
             ?>
                                     <div class="chat-container-receive">
                                         <img class="rounded-circle listing-image" src="<?php echo "uploads/company-". $chats_row['company_id']. "/profile.jpg" ?>" alt="Profile Picture">
-                                        <p class="bottomright-aligned mr-3">
-                                        <?php 
-                                            echo $username_row['name']. " @". $chats_row['timestamp'];
-                                        ?>
-                                        </p>
+                                        <div class="bottomright-aligned mr-3">
+                                            <p>
+                                            <?php 
+                                                echo $username_row['name']. " @". $chats_row['timestamp'];
+                                            ?>
+                                            </p>
+                                        </div>
                                         <p class="ml-3 mt-3"><?php echo $chats_row['message']; ?></p>
                                     </div>
             <?php
@@ -159,11 +171,20 @@
             ?>
                                     <div class="chat-container-send ">
                                         <img class="rounded-circle listing-image" src="<?php echo "uploads/company-". $chats_row['company_id']. "/profile.jpg" ?>" alt="Profile Picture">
-                                        <p class="bottomleft-aligned ml-3">
-                                        <?php 
-                                            echo "Me @". $chats_row['timestamp'];
-                                        ?>
-                                        </p>
+                                        <div class="bottomleft-aligned ml-3">
+                                            <p>
+                                            <?php 
+                                                echo "Me @". $chats_row['timestamp'];
+                                            ?>
+                                            </p>
+                                            <a type="button" class="dropdown ml-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="material-icons">menu</i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-primary">
+                                                <a class="dropdown-item" href="#">Edit</a>
+                                                <a class="dropdown-item" href="#">Delete</a>                                 
+                                            </div>
+                                        </div>
                                         <p class="mr-3 mt-3"><?php echo $chats_row['message']; ?></p>
                                     </div>
             <?php
@@ -173,11 +194,13 @@
             ?>
                                     <div class="chat-container-receive">
                                         <img class="rounded-circle listing-image" src="<?php echo "uploads/freelancer-". $chats_row['freelancer_id']. "/profile.jpg" ?>" alt="Profile Picture">            
-                                        <p class="bottomright-aligned mr-3">
-                                        <?php 
-                                            echo $username_row['fname']. " @". $chats_row['timestamp'];
-                                        ?>
-                                        </p>
+                                        <div class="bottomright-aligned mr-3">
+                                            <p>
+                                            <?php 
+                                                echo $username_row['fname']. " @". $chats_row['timestamp'];
+                                            ?>
+                                            </p>
+                                        </div>
                                         <p class="ml-3 mt-3"><?php echo $chats_row['message']; ?></p>
                                     </div>
             <?php
