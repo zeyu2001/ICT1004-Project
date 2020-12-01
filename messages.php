@@ -12,11 +12,21 @@
         <?php
             include "nav.inc.php"; 
         ?>
+        <script defer src="js/messages.js"></script>
         
         <main class="container border mb-2">
             <?php
             
             if (isset($_SESSION['account_type']) && $_SESSION['account_type'] === 'Freelancer') {
+                
+                if(isset($_POST['reply'])) {
+                    date_default_timezone_set("Asia/Singapore");
+                    $time = date("Y-m-d H:i:s");
+                    $message = $_POST['reply'];
+                    $INSERT_MESSAGE = "INSERT INTO manyhires_messages VALUES(0, '". $time. "', ". $_SESSION['id']. ", ". $_GET['id']. ", '". $message. "', 'freelancer')";
+                    list($return_code, $result, $errorMsg) = query_db($INSERT_MESSAGE, NULL);
+                }
+                
                 list($return_code, $unique_result, $errorMsg) = query_db("SELECT DISTINCT date_format(datetime, '%d %M %Y') as date, freelancer_id, company_id from manyhires_messages where freelancer_id= ? and company_id = ?", array($_SESSION['id'], $_GET['id']));
                
                 if (!$return_code === 0)
@@ -45,8 +55,9 @@
                         </div>
             <?php
                         }
-                        list($return_code, $chats_result, $errorMsg) = query_db("SELECT freelancer_id, company_id, sender_type, message, date_format(datetime, '%d %M %Y') as date, date_format(datetime, '%h:%i %p') as timestamp FROM manyhires_messages WHERE freelancer_id = ? and company_id = ?", array($_SESSION['id'], $_GET['id']));
+                        list($return_code, $chats_result, $errorMsg) = query_db("SELECT message_id, freelancer_id, company_id, sender_type, message, date_format(datetime, '%d %M %Y') as date, date_format(datetime, '%h:%i %p') as timestamp FROM manyhires_messages WHERE freelancer_id = ? and company_id = ?", array($_SESSION['id'], $_GET['id']));
                         
+                        $message_count = 1;
                         while ($chats_row = $chats_result->fetch_assoc()) {
                             
                             list($return_code, $username_result, $errorMsg) = query_db("SELECT name FROM manyhires_companies WHERE company_id = ?", array($_GET['id']));
@@ -54,6 +65,23 @@
                             
                             if ($unique_row['date'] == $chats_row['date']) {
                                 if ($chats_row['sender_type'] == 'freelancer') {
+                         
+                                    if (isset($_POST['edit']) && $_GET['mid'] == $chats_row['message_id']) {
+                                        $message = $_POST['edit'];
+                
+                                        $UPDATE_MESSAGE = "UPDATE manyhires_messages SET message = '". $message. "' WHERE message_id = ?";
+                                        list($return_code, $result, $errorMsg) = query_db($UPDATE_MESSAGE, array($chats_row['message_id']));
+                                        $chats_row['message'] = $message;
+                                    }
+                                    
+                                    else if (isset($_POST['delete']) && $_GET['mid'] == $chats_row['message_id']) {
+                                        
+                                        $DELETE_MESSAGE = "DELETE FROM manyhires_messages WHERE message_id = ?";
+                                        list($return_code, $result, $errorMsg) = query_db($DELETE_MESSAGE, array($chats_row['message_id']));
+                                        
+                                        continue;
+                                    }
+                                     
             ?>
                                     <div class="chat-container-send ">
                                         <img class="rounded-circle listing-image" src="<?php echo "uploads/freelancer-". $chats_row['freelancer_id']. "/profile.jpg" ?>" alt="Profile Picture">
@@ -67,12 +95,12 @@
                                                 <i class="material-icons">menu</i>
                                             </a>
                                             <div class="dropdown-menu dropdown-primary">
-                                                <button class="dropdown-item" href="#">Edit</button>
-                                                <button class="dropdown-item" href="#">Delete</button>                                 
+                                                <button class="dropdown-item" onclick="editMessage(<?php echo $message_count. ", '". htmlspecialchars($_SERVER["PHP_SELF"]). "?id=". $chats_row['company_id']. "&mid=". $chats_row['message_id']. "'"; ?>)">Edit</button>
+                                                <button class="dropdown-item" onclick="deleteMessage(<?php echo $message_count. ", '". htmlspecialchars($_SERVER["PHP_SELF"]). "?id=". $chats_row['company_id']. "&mid=". $chats_row['message_id']. "'"; ?>)">Delete</button>                                 
                                             </div>
                                         </div>
                                         
-                                        <p class="message mr-3 mt-3"><?php echo $chats_row['message']; ?></p>
+                                        <p class="mr-3 mt-3" id="message-<?php echo $message_count; ?>"><?php echo $chats_row['message']; ?></p>
                                     </div>
             <?php
                                 }
@@ -93,6 +121,7 @@
             <?php
                             }
                         }
+                        $message_count++;
                     }
                     $count++;
                 }
@@ -114,8 +143,8 @@
             
                     else {
                     ?>
-           
-                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                    
+                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]). "?id=". $_GET['id']; ?>">
                         <div class="form-group form-row">
                             <div class="col">
                                 <input class="form-control" id="reply" name="reply" type="text" placeholder="Your message">
@@ -132,6 +161,14 @@
             
             
             else {
+                if(isset($_POST['reply'])) {
+                    date_default_timezone_set("Asia/Singapore");
+                    $time = date("Y-m-d H:i:s");
+                    $message = $_POST['reply'];
+                    $INSERT_MESSAGE = "INSERT INTO manyhires_messages VALUES(0, '". $time. "', ". $_GET['id']. ", ". $_SESSION['id']. ", '". $message. "', 'company')";
+                    list($return_code, $result, $errorMsg) = query_db($INSERT_MESSAGE, NULL);
+                }
+                
                 list($return_code, $unique_result, $errorMsg) = query_db("SELECT DISTINCT date_format(date(datetime), '%d %b %y') as date, freelancer_id, company_id from manyhires_messages where freelancer_id= ? and company_id = ?", array($_GET['id'], $_SESSION['id']));
           
                 if (!$return_code === 0)
@@ -161,13 +198,30 @@
             <?php
                         }
                         
-                        list($return_code, $chats_result, $errorMsg) = query_db("SELECT freelancer_id, company_id, sender_type, message, date_format(datetime, '%d %b %y') as date, date_format(datetime, '%h:%i %p') as timestamp FROM manyhires_messages WHERE freelancer_id = ? and company_id = ?", array($_GET['id'], $_SESSION['id']));
-                    
+                        list($return_code, $chats_result, $errorMsg) = query_db("SELECT message_id, freelancer_id, company_id, sender_type, message, date_format(datetime, '%d %b %y') as date, date_format(datetime, '%h:%i %p') as timestamp FROM manyhires_messages WHERE freelancer_id = ? and company_id = ?", array($_GET['id'], $_SESSION['id']));
+                        
+                        $message_count = 1;
+                        
                         while ($chats_row = $chats_result->fetch_assoc()) {
                             list($return_code, $username_result, $errorMsg) = query_db("SELECT fname FROM manyhires_freelancers WHERE freelancer_id = ?", array($_GET['id']));
                             $username_row = $username_result->fetch_assoc();
                             if ($unique_row['date'] == $chats_row['date']) {
                                 if ($chats_row['sender_type'] == 'company') {
+                                    if (isset($_POST['edit']) && $_GET['mid'] == $chats_row['message_id']) {
+                                        $message = $_POST['edit'];
+                
+                                        $UPDATE_MESSAGE = "UPDATE manyhires_messages SET message = '". $message. "' WHERE message_id = ?";
+                                        list($return_code, $result, $errorMsg) = query_db($UPDATE_MESSAGE, array($chats_row['message_id']));
+                                        $chats_row['message'] = $message;
+                                    }
+                                    
+                                    else if (isset($_POST['delete']) && $_GET['mid'] == $chats_row['message_id']) {
+                                        
+                                        $DELETE_MESSAGE = "DELETE FROM manyhires_messages WHERE message_id = ?";
+                                        list($return_code, $result, $errorMsg) = query_db($DELETE_MESSAGE, array($chats_row['message_id']));
+                                        
+                                        continue;
+                                    }
             ?>
                                     <div class="chat-container-send ">
                                         <img class="rounded-circle listing-image" src="<?php echo "uploads/company-". $chats_row['company_id']. "/profile.jpg" ?>" alt="Profile Picture">
@@ -181,11 +235,11 @@
                                                 <i class="material-icons">menu</i>
                                             </a>
                                             <div class="dropdown-menu dropdown-primary">
-                                                <a class="dropdown-item" href="#">Edit</a>
-                                                <a class="dropdown-item" href="#">Delete</a>                                 
+                                                <button class="dropdown-item" onclick="editMessage(<?php echo $message_count. ", '". htmlspecialchars($_SERVER["PHP_SELF"]). "?id=". $chats_row['freelancer_id']. "&mid=". $chats_row['message_id']. "'"; ?>)">Edit</button>
+                                                <button class="dropdown-item" onclick="deleteMessage(<?php echo $message_count. ", '". htmlspecialchars($_SERVER["PHP_SELF"]). "?id=". $chats_row['freelancer_id']. "&mid=". $chats_row['message_id']. "'"; ?>)">Delete</button>                                 
                                             </div>
                                         </div>
-                                        <p class="mr-3 mt-3"><?php echo $chats_row['message']; ?></p>
+                                        <p class="mr-3 mt-3" id="message-<?php echo $message_count; ?>"><?php echo $chats_row['message']; ?></p>
                                     </div>
             <?php
                                 }
@@ -206,6 +260,7 @@
             <?php
                                 }
                             }
+                            $message_count++;
                         }
                         $count++;
                     }
@@ -228,7 +283,7 @@
                     else {
                     ?>
            
-                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]). "?id=". $_GET['id']; ?>">
                         <div class="form-group form-row">
                             <div class="col">
                                 <input class="form-control" id="reply" name="reply" type="text" placeholder="Your message">
