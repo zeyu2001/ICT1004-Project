@@ -1,5 +1,5 @@
 <?php
-    $QUERY_GET_INVITATIONS = "SELECT * FROM manyhires_invitations WHERE freelancer_id=? AND listing_id=?";
+    $QUERY_GET_INVITATIONS = "SELECT * FROM manyhires_invitations WHERE freelancer_id=? AND listing_id=? AND accepted=0 AND rejected=0";
     $QUERY_GET_COMPANY_BY_ID = "SELECT * FROM manyhires_companies WHERE company_id=?";
     
     list($return_code, $invitations_result, $errorMsg) = query_db($QUERY_GET_INVITATIONS, 
@@ -28,6 +28,7 @@
 
                         <h3> <?php echo $listings_row['title'] ?> </h3>
                         <p> The following companies have invited you to join them. </p>
+                        <p> Accept invitations to start a conversation. </p>
                         
                         <?php while ($invitations_row = $invitations_result->fetch_assoc()): 
                             
@@ -69,6 +70,26 @@
                                                 <div class="row align-items-center">
                                                     <div class="col-md-12 mb-3">
                                                         <a href='#' class='card-link '> <?php echo $company_row['email'] ?> </a>
+                                                    </div>
+                                                </div>
+                                                <div class="row align-items-center">
+                                                    <div class="col-md-6 mb-3">
+                                                        <form method="post" action="process_accept_invite.php">
+                                                            <input type="hidden" name="message" value="<?php echo $invitations_row['description'] ?>">
+                                                            <input type="hidden" name="invitation_id" value="<?php echo $invitations_row['invitation_id'] ?>">
+                                                            <input type="hidden" name="listing_id" value="<?php echo $listings_row['listing_id'] ?>">
+                                                            <input type="hidden" name="company_id" value="<?php echo $company_row['company_id'] ?>">
+                                                            <input type="hidden" name="type" value="accept">
+                                                            <button class='btn btn-success' type="submit"> Accept </button>
+                                                        </form>
+                                                    </div>
+                                                    <div class="col-md-6 mb-3">
+                                                        <form method="post" action="process_accept_invite.php">
+                                                            <input type="hidden" name="invitation_id" value="<?php echo $invitations_row['invitation_id'] ?>">
+                                                            <input type="hidden" name="listing_id" value="<?php echo $listings_row['listing_id'] ?>">
+                                                            <input type="hidden" name="type" value="reject">
+                                                            <button class='btn btn-danger' type="submit"> Reject </button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
