@@ -19,10 +19,14 @@
             
             if (isset($_SESSION['account_type']) && $_SESSION['account_type'] === 'Freelancer') {
                 
-                if(isset($_POST['reply'])) {
+                if(isset($_POST['reply']) && $_POST['reply'] != "") {
                     date_default_timezone_set("Asia/Singapore");
                     $time = date("Y-m-d H:i:s");
                     $message = $_POST['reply'];
+                    $message = trim($message);
+                    $message = stripslashes($message);
+                    $message = htmlspecialchars($message);
+                    $message = filter_var($message, FILTER_SANITIZE_STRING);
                     $INSERT_MESSAGE = "INSERT INTO manyhires_messages VALUES(0, '". $time. "', ". $_SESSION['id']. ", ". $_GET['id']. ", '". $message. "', 'freelancer')";
                     list($return_code, $result, $errorMsg) = query_db($INSERT_MESSAGE, NULL);
                 }
@@ -66,7 +70,7 @@
                             if ($unique_row['date'] == $chats_row['date']) {
                                 if ($chats_row['sender_type'] == 'freelancer') {
                          
-                                    if (isset($_POST['edit']) && $_GET['mid'] == $chats_row['message_id']) {
+                                    if (isset($_POST['edit']) && $_POST['edit'] != "" && $_GET['mid'] == $chats_row['message_id']) {
                                         $message = $_POST['edit'];
                 
                                         $UPDATE_MESSAGE = "UPDATE manyhires_messages SET message = '". $message. "' WHERE message_id = ?";
@@ -161,10 +165,14 @@
             
             
             else {
-                if(isset($_POST['reply'])) {
+                if(isset($_POST['reply']) && $_POST['reply'] != "") {
                     date_default_timezone_set("Asia/Singapore");
                     $time = date("Y-m-d H:i:s");
                     $message = $_POST['reply'];
+                    $message = trim($message);
+                    $message = stripslashes($message);
+                    $message = htmlspecialchars($message);
+                    $message = filter_var($message, FILTER_SANITIZE_STRING);
                     $INSERT_MESSAGE = "INSERT INTO manyhires_messages VALUES(0, '". $time. "', ". $_GET['id']. ", ". $_SESSION['id']. ", '". $message. "', 'company')";
                     list($return_code, $result, $errorMsg) = query_db($INSERT_MESSAGE, NULL);
                 }
@@ -207,7 +215,7 @@
                             $username_row = $username_result->fetch_assoc();
                             if ($unique_row['date'] == $chats_row['date']) {
                                 if ($chats_row['sender_type'] == 'company') {
-                                    if (isset($_POST['edit']) && $_GET['mid'] == $chats_row['message_id']) {
+                                    if (isset($_POST['edit']) && $_POST['edit'] != "" && $_GET['mid'] == $chats_row['message_id']) {
                                         $message = $_POST['edit'];
                 
                                         $UPDATE_MESSAGE = "UPDATE manyhires_messages SET message = '". $message. "' WHERE message_id = ?";
