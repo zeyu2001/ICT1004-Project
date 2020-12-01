@@ -36,7 +36,7 @@
                             
                             $user_row = $users_result->fetch_assoc();
                             
-                            list($return_code_messages, $messages_result, $errorMsg) = query_db("SELECT sender_type, message, date_format(datetime, '%d %b %y, %h:%i%p') as timestamp FROM manyhires_messages WHERE company_id = ? ORDER BY datetime DESC LIMIT 1", array($chats_row['company_id']));
+                            list($return_code_messages, $messages_result, $errorMsg) = query_db("SELECT sender_type, message, date_format(datetime, '%d %b %y, %h:%i%p') as timestamp FROM manyhires_messages WHERE company_id = ? AND freelancer_id = ? ORDER BY datetime DESC LIMIT 1", array($chats_row['company_id'], $_SESSION['id']));
                             $message_row = $messages_result->fetch_assoc();
                             ?>
                             <div class="card flex-row mt-2 mb-5 mx-2 p-2">
@@ -103,7 +103,7 @@
                             
                             $user_row = $users_result->fetch_assoc();
                             
-                            list($return_code_messages, $messages_result, $errorMsg) = query_db("SELECT sender_type, message, date_format(datetime, '%d %b %y, %h:%i%p') as timestamp FROM manyhires_messages WHERE freelancer_id = ? ORDER BY datetime DESC LIMIT 1", array($chats_row['freelancer_id']));
+                            list($return_code_messages, $messages_result, $errorMsg) = query_db("SELECT sender_type, message, date_format(datetime, '%d %b %y, %h:%i%p') as timestamp FROM manyhires_messages WHERE freelancer_id = ? AND company_id = ? ORDER BY datetime DESC LIMIT 1", array($chats_row['freelancer_id'], $_SESSION['od']));
                             $message_row = $messages_result->fetch_assoc();
                             ?>
                             <div class="card flex-row mt-2 mb-5 mx-2 p-2">
