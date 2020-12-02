@@ -1,6 +1,6 @@
 <?php
     const namefields_filter = '/^[a-zA-Z\s]+$/';
-    const passwords_filter = '/^.{8,}$/';
+    const passwords_filter = '/(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[^\w]).{8,}/';
     const email_filter = '/^[a-z0-9][_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
     const headline_filter = '/^[a-zA-Z0-9\s\.\-,!?]*$/';
     const location_filter = '/^[a-zA-Z0-9\s\.\-,!?]*$/';

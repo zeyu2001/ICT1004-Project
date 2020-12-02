@@ -55,31 +55,51 @@
                             Unsplash
                         </a>
                     </p>
-                    <div class="row align-items-center">
+                    <div class="row align-items-center" data-aos="fade-down">
                         <div class="col-md-8 order-md-1 order-2">
-                            <div class="landing-segment" data-aos="fade-down">
+                            <div class="landing-segment">
                                 <h2 class="landing-heading text-center">For Employers</h2>
                                 <p>
-                                    In this unprecedented pandemic, gig work has been more popular than ever
-                                    before and we aim to connect free-lance developers to you to meet your needs.
-                                    Our team of experienced web developers boast over 300 years of cumulative 
-                                    experience with past roles in major companies including Google, Facebook and Microsoft.
+                                    In the fast-paced, hyper-competitive tech scene today, there is no room for slow recruitment processes. 
+                                    Create a profile, find great matches, and connect instantly.
+                                    Join us to leverage on our fast-growing network of global talent to suit your project's needs.
+                                    Our team of experienced developers boast a wealth of experience from past roles in major companies including Google, Facebook and Microsoft.
                                     We are confident that they can meet your needs.
                                 </p>
                             </div>
-                            <div class="landing-segment" data-aos="fade-down">
+                            <div class="landing-segment">
                                 <h2 class="landing-heading text-center">For Freelancers</h2>
                                 <p>
-                                    If you are a free-lancer looking for work opportunities, we can easily connect
-                                    you with employment opportunities. Our network has connected over 1200 coders 
-                                    and customers in just the last 3 months. Join today and leverage the fast growing 
-                                    community of web developers online.
+                                    No applications, no cover letters. If you are a freelancer looking for opportunities, 
+                                    we can easily connect you with companies you love. Our network has connected over 1200 freelancers 
+                                    and businesses in just the last 3 months. Join today and leverage on our global network of employers
+                                    to find great jobs, anywhere in the world.
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-4 order-md-2 order-1" data-aos="fade-down">
+                        <div class="col-md-4 order-md-2 order-1">
                             <img class="side-img mx-auto d-block" src="images/undraw_interview.svg" alt="">
                         </div>
+                    </div>
+                    <div class='row align-items-center pb-5' data-aos="fade-down">
+                        <div class='col-md-3 order-md-1 order-2'>
+                            <img class="side-img mx-auto d-block rounded-circle" src="images/zeyu.jpg" alt="Zeyu">
+                        </div>
+                        <div class='col-md-9 order-md-2 order-1'>
+                            <blockquote class="blockquote">
+                                <i class='material-icons flip-horizontal red-icon large-icon'>format_quote</i>
+                                <p class="mb-0">
+                                    This is what recruiting should look like. 
+                                    ManyHires provides a stress-free environment where I can choose from companies
+                                    I love. With the diverse range of companies and projects from all around the world,
+                                    I have been able to work on projects that I have never dreamed of before.
+                                </p>
+                                <footer class="blockquote-footer">
+                                    Zhang Zeyu, Software Engineer
+                                </footer>
+                            </blockquote>
+                        </div>
+                        
                     </div>
                 </div>
             </section>
@@ -101,26 +121,26 @@
                             Unsplash
                         </a>
                     </p>
-                    <div class="row align-items-center">
-                        <div class="col-md-4 order-md-1 order-2"  data-aos="fade-down">
+                    <div class="row align-items-center" data-aos="fade-down">
+                        <div class="col-md-4 order-md-1 order-2">
                             <img class="side-img mx-auto d-block" src="images/undraw_profile.svg" alt="">
                         </div>
                         <div class="col-md-8 order-md-2 order-1">
-                            <div class="landing-segment" data-aos="fade-down">
+                            <div class="landing-segment">
                                 <h2 class="landing-heading text-center">The Future of Recruiting</h2>
                                 <p>
-                                We aim to provide a leading platform for businesses and freelancers to be able to find each other
-                                on a dedicated platform. We believe that every individual has their own talent when it comes to their work
-                                and this is where they will be able to display them.
+                                    ManyHires is a service that connects freelance tech talent to companies, 
+                                    by providing freelancers a dedicated platform for them to advertise their area of expertise. 
+                                    The aim is to speed up the hiring process, and offer a new way to adapt to rapidly changing needs. 
+                                    Freelancers bring with them a wealth of experience from working with different teams on unique projects. 
+                                    With ManyHires, no applications and cover letters are required, allowing companies to easily and quickly identify suitable freelancers to bring into their teams. 
                                 </p>
                                 <p>
-                                    Work opportunities for freelancers don't come very easily, which is why we started the website to help you out.
-                                    With a dedicated platform for you, all you have to do is register with us and let us handle the rest.
+                                    For employers, this means being connected to a global network of growing talent that can be tapped upon for each new project or team, and a seamless hiring process.
+                                </p>
+                                <p>
+                                    For freelancers, this means being connected to interested companies who are actively looking to expand their talent pool, offering a gateway to opportunities anywhere in the world.
 
-                                </p>
-                                <p>
-                                    For businesses, if you are looking for talented individuals for projects, you've come to the right place.
-                                    We pride ourselves for having a wide range of talent's that will definitely fulfill your requirements.
                                 </p>
                             </div>
                         </div>

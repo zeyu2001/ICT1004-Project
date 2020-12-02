@@ -245,7 +245,7 @@
                         { ?>
                             <div class="row">
                                 <div class="col-md-8 order-md-1 order-2">
-                                    <h1> Oops! </h1>;
+                                    <h1> Oops! </h1>
                                     <h2>The following input errors were detected:</h2>
                                     <?php echo "<p>" . $error_msg . "</p>"; ?>
                                     <a class='red-button' href='register.php'> Return to Sign Up </a>
