@@ -36,6 +36,11 @@
                 }
                 
             }
+            
+            $QUERY_FRONTEND .= " ORDER BY listing_id DESC";
+            $QUERY_BACKEND .= " ORDER BY listing_id DESC";
+            $QUERY_FULLSTACK .= " ORDER BY listing_id DESC";
+            $QUERY_ALL .= " ORDER BY listing_id DESC";
         ?>
         <main class="container"> 
             <h1>Freelancer Listings</h1>

@@ -50,7 +50,7 @@
             </div>
 
             <?php
-                list($return_code, $listings_result, $errorMsg) = query_db("SELECT * FROM manyhires_listings WHERE freelancer_id=?", array($_SESSION['id']));
+                list($return_code, $listings_result, $errorMsg) = query_db("SELECT * FROM manyhires_listings WHERE freelancer_id=? ORDER BY listing_id DESC", array($_SESSION['id']));
                 if (!$return_code === 0)
                 {
                     echo $errorMsg;
