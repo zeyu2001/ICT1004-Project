@@ -1,5 +1,5 @@
 <?php
-    $config = parse_ini_file('../../private/db-config.ini');
+    $config = parse_ini_file('../private/db-config.ini');
     
     /*
      * Executes a query on the database, and returns the result.
