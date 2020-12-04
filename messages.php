@@ -151,7 +151,7 @@
                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]). "?id=". $_GET['id']; ?>">
                         <div class="form-group form-row">
                             <div class="col">
-                                <label for="reply" hidden>Your Message</label>
+                                <label for="reply" class="label-hidden">Your Message</label>
                                 <input class="form-control" id="reply" name="reply" type="text" placeholder="Your message">
                             </div>
                             <button class="btn btn-primary" type="submit">Send</button>
@@ -295,7 +295,7 @@
                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]). "?id=". $_GET['id']; ?>">
                         <div class="form-group form-row">
                             <div class="col">
-                                <label for="reply" hidden>Your Message</label>
+                                <label for="reply" class="label-hidden">Your Message</label>
                                 <input class="form-control" id="reply" name="reply" type="text" placeholder="Your message">
                             </div>
                             <button class="btn btn-primary" type="submit">Send</button>
