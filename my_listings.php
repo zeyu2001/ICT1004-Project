@@ -50,7 +50,7 @@
             </div>
 
             <?php
-                list($return_code, $listings_result, $errorMsg) = query_db("SELECT * FROM manyhires_listings WHERE freelancer_id=?", array($_SESSION['id']));
+                list($return_code, $listings_result, $errorMsg) = query_db("SELECT * FROM manyhires_listings WHERE freelancer_id=? ORDER BY listing_id DESC", array($_SESSION['id']));
                 if (!$return_code === 0)
                 {
                     echo $errorMsg;
@@ -73,7 +73,6 @@
                     <div class="row listing">
                         <div class="col-md-3 my-auto">
                             <img class="rounded-circle listing-image"
-                                width="100%"
                                 src="<?php echo "uploads/freelancer-". $listings_row['freelancer_id']. "/profile.jpg" ?>"
                                 alt="Failed to load profile picture">
                         </div>
@@ -81,10 +80,10 @@
                             <div class="row listing-row">
                                 <div class="icon-right">
                                     <h2><?php echo $listings_row['title'] ?></h2>
-                                    <i class="material-icons edit-icon" data-toggle="modal" data-target="#edit-listing">edit</i>
+                                    <i class="material-icons edit-icon" data-toggle="modal" data-target="#edit-listing<?php echo $i ?>">edit</i>
                                 </div>
                             </div>
-                            <div id="edit-listing" class="modal fade" role="dialog">
+                            <div id="edit-listing<?php echo $i ?>" class="modal fade" role="dialog">
                               <div class="modal-dialog">
 
                                 <!-- Modal content-->
@@ -142,7 +141,7 @@
                                 Description: <?php echo $listings_row['description'] ?>
                             </div>
                             <div class="row listing-row">
-                               <a href="#">Visit <?php echo $freelancers_row["fname"] . " " . $freelancers_row["lname"]. "'s page" ?> </a>
+                               <a href="profile.php">Visit <?php echo $freelancers_row["fname"] . " " . $freelancers_row["lname"]. "'s page" ?> </a>
                             </div>
                             
                             <!-- Get "My Invitations" -->

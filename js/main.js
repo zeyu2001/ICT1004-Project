@@ -102,11 +102,13 @@ $(document).ready(function()
         if (accountTypeInput.val() === "corporate") {
             companyNameInput.show();
             freelancerNameInput.hide();
+            $('#company_name').prop("required", true);
             $('#lname').removeAttr('required');
         } 
         else {
             companyNameInput.hide();
             $('#company_name').removeAttr('required');
+            $('#lname').prop("required", true);
             freelancerNameInput.show();
         }
     }
