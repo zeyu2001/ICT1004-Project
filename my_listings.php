@@ -80,10 +80,10 @@
                             <div class="row listing-row">
                                 <div class="icon-right">
                                     <h2><?php echo $listings_row['title'] ?></h2>
-                                    <i class="material-icons edit-icon" data-toggle="modal" data-target="#edit-listing">edit</i>
+                                    <i class="material-icons edit-icon" data-toggle="modal" data-target="#edit-listing<?php echo $i ?>">edit</i>
                                 </div>
                             </div>
-                            <div id="edit-listing" class="modal fade" role="dialog">
+                            <div id="edit-listing<?php echo $i ?>" class="modal fade" role="dialog">
                               <div class="modal-dialog">
 
                                 <!-- Modal content-->
