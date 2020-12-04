@@ -73,7 +73,6 @@
                     <div class="row listing">
                         <div class="col-md-3 my-auto">
                             <img class="rounded-circle listing-image"
-                                width="100%"
                                 src="<?php echo "uploads/freelancer-". $listings_row['freelancer_id']. "/profile.jpg" ?>"
                                 alt="Failed to load profile picture">
                         </div>

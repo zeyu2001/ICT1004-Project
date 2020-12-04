@@ -48,7 +48,6 @@
             <form class="containter" action="listings.php?" method="get">
                 <div class="form-group form-row">
                     <div class="col-md-8 py-2">
-                        <label for="query" hidden>Search Keywords</label>
                         <input class="form-control" name="query" type="search" placeholder="e.g. React.js" aria-label="Search"
                                pattern="^[a-zA-Z0-9\s\.\-,!?]*$">
                     </div>
@@ -116,7 +115,6 @@
                         <div class="row listing">
                             <div class="col-md-3 my-auto">
                                 <img class="rounded-circle listing-image"
-                                    width="100%"
                                     src="<?php echo "uploads/freelancer-". $listings_row['freelancer_id']. "/profile.jpg" ?>"
                                     alt="Failed to load profile picture">
                             </div>

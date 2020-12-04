@@ -4,7 +4,7 @@
     include "validate.inc.php";
     include "db_functions.inc.php";
     
-    $QUERY_UPDATE_LISTING = "UPDATE manyhires_listings SET  description=?, title=?, type=? WHERE freelancer_id=?";
+    $QUERY_UPDATE_LISTING = "UPDATE manyhires_listings SET description=?, title=?, type=? WHERE freelancer_id=? AND listing_id=?";
     
     $errorMsg = "";
     $success = true;
@@ -18,6 +18,9 @@
     $type = validate_input("listing_type", "listing type", 
             FILTER_VALIDATE_REGEXP, array("regexp" => '/(full-stack)|(front-end)|(back-end)/'),
             "Please select a valid value.", true, true);
+    $listing_id = validate_input("listing_id", "listing ID",
+            FILTER_VALIDATE_INT, array(),
+            "Invalid listing ID", true, true);
     
     if ($success)
     {
@@ -26,7 +29,8 @@
                     $description,
                     $title,
                     $type,
-                    $_SESSION['id']
+                    $_SESSION['id'],
+                    $listing_id,
                 ));
         if ($return_code === 0)
         {
