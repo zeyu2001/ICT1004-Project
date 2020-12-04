@@ -31,7 +31,7 @@
                     list($return_code, $result, $errorMsg) = query_db($INSERT_MESSAGE, NULL);
                 }
                 
-                list($return_code, $unique_result, $errorMsg) = query_db("SELECT DISTINCT date_format(datetime, '%d %M %Y') as date, freelancer_id, company_id from manyhires_messages where freelancer_id= ? and company_id = ?", array($_SESSION['id'], $_GET['id']));
+                list($return_code, $unique_result, $errorMsg) = query_db("SELECT DISTINCT date_format(datetime, '%d %M %Y') as date, freelancer_id, company_id FROM manyhires_messages WHERE freelancer_id= ? and company_id = ? ORDER BY date", array($_SESSION['id'], $_GET['id']));
                
                 if (!$return_code === 0)
                     {
@@ -177,7 +177,7 @@
                     list($return_code, $result, $errorMsg) = query_db($INSERT_MESSAGE, NULL);
                 }
                 
-                list($return_code, $unique_result, $errorMsg) = query_db("SELECT DISTINCT date_format(date(datetime), '%d %b %y') as date, freelancer_id, company_id from manyhires_messages where freelancer_id= ? and company_id = ?", array($_GET['id'], $_SESSION['id']));
+                list($return_code, $unique_result, $errorMsg) = query_db("SELECT DISTINCT date_format(date(datetime), '%d %b %y') as date, freelancer_id, company_id from manyhires_messages where freelancer_id= ? and company_id = ? ORDER BY date", array($_GET['id'], $_SESSION['id']));
           
                 if (!$return_code === 0)
                     {
