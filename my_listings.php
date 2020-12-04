@@ -142,7 +142,7 @@
                                 Description: <?php echo $listings_row['description'] ?>
                             </div>
                             <div class="row listing-row">
-                               <a href="#">Visit <?php echo $freelancers_row["fname"] . " " . $freelancers_row["lname"]. "'s page" ?> </a>
+                               <a href="profile.php">Visit <?php echo $freelancers_row["fname"] . " " . $freelancers_row["lname"]. "'s page" ?> </a>
                             </div>
                             
                             <!-- Get "My Invitations" -->
