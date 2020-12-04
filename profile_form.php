@@ -2,11 +2,8 @@
     
     <div class="form-group">
         <label for="profile-pic">Profile Picture:</label>
-        <input class="form-control-file" type="file" name="profile-pic" id="profile-pic" aria-describedby="profilePicHelpBlock">
+        <input class="form-control-file" type="file" name="profile-pic" id="profile-pic">
     </div>
-    <small id="profilePicHelpBlock" class="form-text text-muted">
-        Please note that only JPG, JPEG, PNG & GIF files are allowed. If your profile picture is not updated, try refreshing the browser cache.
-    </small>
     
     <div class="form-group">
         <label for="fname">First Name:</label>

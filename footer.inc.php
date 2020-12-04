@@ -2,7 +2,7 @@
     <i class="material-icons">keyboard_arrow_up</i>
 </button>
 
-<footer class="container page-footer">
+<footer class="container">
     <p> Copyright &copy; 2020 Zhang Zeyu, Ivan Ng, Eugene Kuo, 
         Samuel Chew, Darrell Lu. </p>
     <p> Photos retrieved from <a href="https://unsplash.com/">Unsplash</a>. </p>

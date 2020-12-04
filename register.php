@@ -83,18 +83,14 @@
                             <div class="col-sm-6 py-2">
                                 <label for="pwd">Password:</label>
                                 <input class="form-control" id="pwd" name="pwd" type="password" placeholder="••••••" 
-                                       required pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[^\w]).{8,}" aria-describedby="passwordHelpBlock">
+                                       required pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[^\w]).{8,}">
                             </div>
                             <div class="col-sm-6 py-2">
                                 <label for="pwd_confirm">Confirm Password:</label>
                                 <input class="form-control" id="pwd_confirm" name="pwd_confirm" type="password" placeholder="••••••" 
                                        required pattern="(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[^\w]).{8,}">
                             </div>
-                            <small id="passwordHelpBlock" class="form-text text-muted">
-                                Your password must be at least 8 characters long, contain at least one number, one uppercase letter, one lowercase letter, and one special character.
-                            </small>
                         </div>
-                        
                         <div class="form-group">
                             <label for="address">Address:</label>
                             <input class="form-control" id="address" name="address" type="text" placeholder="e.g. 123 Baker Street"

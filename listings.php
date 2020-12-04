@@ -36,11 +36,6 @@
                 }
                 
             }
-            
-            $QUERY_FRONTEND .= " ORDER BY listing_id DESC";
-            $QUERY_BACKEND .= " ORDER BY listing_id DESC";
-            $QUERY_FULLSTACK .= " ORDER BY listing_id DESC";
-            $QUERY_ALL .= " ORDER BY listing_id DESC";
         ?>
         <main class="container"> 
             <h1>Freelancer Listings</h1>
@@ -48,11 +43,13 @@
             <form class="containter" action="listings.php?" method="get">
                 <div class="form-group form-row">
                     <div class="col-md-8 py-2">
+                        <label for="query" hidden>Search Keywords</label>
                         <input class="form-control" name="query" type="search" placeholder="e.g. React.js" aria-label="Search"
                                pattern="^[a-zA-Z0-9\s\.\-,!?]*$">
                     </div>
                     <div class="col-md-3 py-2">
-                        <select class="form-control form-control-md" name="type" id="account_type" title="Account Type">
+                        <label for="type" hidden="">Type</label>
+                        <select class="form-control form-control-md" name="type" id="account_type">
                             <option value="">All</option>
                             <option value="front-end">Front End</option>
                             <option value="back-end">Back End</option>
@@ -115,6 +112,7 @@
                         <div class="row listing">
                             <div class="col-md-3 my-auto">
                                 <img class="rounded-circle listing-image"
+                                    width="100%"
                                     src="<?php echo "uploads/freelancer-". $listings_row['freelancer_id']. "/profile.jpg" ?>"
                                     alt="Failed to load profile picture">
                             </div>
