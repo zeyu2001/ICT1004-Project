@@ -31,7 +31,7 @@
                             </form>
                         </div>
                         <div class="col-md-6 order-md-2 order-1">
-                            <img id="landing-img" class="mx-auto d-block" src="images/undraw_feeling_proud.svg" alt="">
+                            <img width="711" height="670" id="landing-img" class="mx-auto d-block" src="images/undraw_feeling_proud.svg" alt="">
                         </div>
                     </div>
                 </div>
@@ -78,12 +78,12 @@
                             </div>
                         </div>
                         <div class="col-md-4 order-md-2 order-1">
-                            <img class="side-img mx-auto d-block" src="images/undraw_interview.svg" alt="">
+                            <img width="1084" height="759" class="side-img mx-auto d-block" src="images/undraw_interview.svg" alt="">
                         </div>
                     </div>
                     <div class='row align-items-center pb-5' data-aos="fade-down">
                         <div class='col-md-3 order-md-1 order-2'>
-                            <img class="side-img mx-auto d-block rounded-circle" src="images/zeyu.jpg" alt="Zeyu">
+                            <img width="530" height="528" class="side-img mx-auto d-block rounded-circle" src="images/zeyu.jpg" alt="Zeyu">
                         </div>
                         <div class='col-md-9 order-md-2 order-1'>
                             <blockquote class="blockquote">
@@ -122,7 +122,7 @@
                     </p>
                     <div class="row align-items-center" data-aos="fade-down">
                         <div class="col-md-4 order-md-1 order-2">
-                            <img class="side-img mx-auto d-block" src="images/undraw_profile.svg" alt="">
+                            <img width="1032" height="742" class="side-img mx-auto d-block" src="images/undraw_profile.svg" alt="">
                         </div>
                         <div class="col-md-8 order-md-2 order-1">
                             <div class="landing-segment">
