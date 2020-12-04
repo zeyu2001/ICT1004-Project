@@ -1,12 +1,5 @@
 <?php
-    // ONLY FOR DEVELOPMENT. MOVE TO A SECURE .INI FILE IN PRODUCTION:
-    // $config = parse_ini_file('../../private/db-config.ini'); 
-    $config = array(
-        "servername" => '184.72.246.32:3306',
-        "username" => 'sqldev',
-        "password" => 'ICT1004BestGroup!',
-        "dbname" => 'manyhires',
-    );
+    $config = parse_ini_file('../private/db-config.ini');
     
     /*
      * Executes a query on the database, and returns the result.
