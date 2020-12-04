@@ -53,7 +53,7 @@
                                pattern="^[a-zA-Z0-9\s\.\-,!?]*$">
                     </div>
                     <div class="col-md-3 py-2">
-                        <label for="type" hidden="">Type</label>
+                        <label for="account_type" hidden>Type</label>
                         <select class="form-control form-control-md" name="type" id="account_type">
                             <option value="">All</option>
                             <option value="front-end">Front End</option>

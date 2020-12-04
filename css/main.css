@@ -119,12 +119,16 @@ body { padding-top: 100px; }
     font-size: 14px;
     text-transform: uppercase;
     text-decoration: none;
-    color: #031D44;
     padding: 20px 0px;
     margin: 0px 20px;
     display: inline-block;
     position: relative;
-    opacity: 0.75;
+    opacity: 1;
+}
+
+:not(.active) > .nav-link:not(:hover)
+{
+    color: #767676 !important;
 }
 
 .nav-link:hover {
